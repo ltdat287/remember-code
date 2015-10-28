@@ -344,7 +344,6 @@ class Facebook_Feed {
 		  curl_multi_exec($mh, $running);
 		} while($running > 0);
 
-
 		// get content and remove handles
 		foreach($curly as $id => $c) {
 		  $response[$id] = curl_multi_getcontent($c);
@@ -363,7 +362,7 @@ class Facebook_Feed {
 	  // $des = json_decode($response['page_data']);
 	  // $data = json_decode($response['feed_data']);
 	  $data = json_encode($response);
-var_dump($data); die();
+
 	  if (!file_exists($fb_cache_name)) {
 		  touch($fb_cache_name);
 	  }
@@ -406,8 +405,8 @@ var_dump($data); die();
 		    //Don't do it for these!
 			if($FB_Shortcode['type'] == 'group' || $FB_Shortcode['type'] == 'event' || isset($FB_Shortcode['hide_like_option']) && $FB_Shortcode['hide_like_option'] == 'yes') { return;}
 			//Facebook Follow Button Options
-			$fb_show_follow_btn = get_option('fb_show_follow_btn');
-			$fb_show_follow_btn_where = get_option('fb_show_follow_btn_where');
+			$fb_show_follow_btn = 'display';
+			$fb_show_follow_btn_where = 'fb-like-top-below-title';
 			if (!isset($_GET['load_more_ajaxing'])) {
 				$like_option_align_final = isset($FB_Shortcode['like_option_align']) ? 'fts-fb-social-btn-'.$FB_Shortcode['like_option_align'].'' : '';
 				$output ='';
@@ -441,5 +440,18 @@ var_dump($data); die();
 				}
 			return $output ;	
 			}
+	}
+
+	//**************************************************
+	// Create a random string
+	//**************************************************
+	function rand_string( $length = 10) {
+			$characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$charactersLength = strlen($characters);
+		$randomString = '';
+		for ($i = 0; $i < $length; $i++) {
+			$randomString .= $characters[rand(0, $charactersLength - 1)];
+		}
+		return $randomString;
 	}
 }
