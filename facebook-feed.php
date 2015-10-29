@@ -1,4 +1,6 @@
 <?php
+use feedthemsocial\FTS_Facebook_Feed_Post_Types as FTS_Facebook_Feed_Post_Types;
+
 class Facebook_Feed {
 
 	private $config = array(
