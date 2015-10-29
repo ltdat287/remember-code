@@ -8,7 +8,7 @@ class Facebook_Feed {
 		);
 
 	private $FB_array = array(
-								'id' => 'muv0z',
+								'id' => 'toyota',
 								'type' => 'page',
 								'posts_displayed' => '',
 								'height' => '',
@@ -23,6 +23,7 @@ class Facebook_Feed {
 								'image_position_top' => '',
 								'posts' => '20',
 								'words' => '45',
+								'loadmore' => 'button',
 							);
 
 	//**************************************************
@@ -141,7 +142,13 @@ class Facebook_Feed {
 				$single_event_array_response = isset($single_event_array_response) ? $single_event_array_response : '';
 				$FTS_FB_OUTPUT .=  $post_types->feed_post_types($set_zero, $FBtype, $post_data, $FB_Shortcode, $response_post_array, $single_event_array_response);
 				$set_zero++;
-			}
+			}// END POST foreach
+			// if(is_plugin_active('feed-them-premium/feed-them-premium.php') && $FB_Shortcode['type'] !== 'reviews' || is_plugin_active('feed-them-social-facebook-reviews/feed-them-social-facebook-reviews.php') && $FB_Shortcode['type'] == 'reviews'){
+			// var_dump($feed_data,$FBtype,$FB_Shortcode,$_REQUEST['fts_dynamic_name']); die();
+			// 	$FTS_FB_OUTPUT .= $this->fts_facebook_loadmore($atts,$feed_data,$FBtype,$FB_Shortcode,$_REQUEST['fts_dynamic_name']);
+			// }
+			
+			// $FTS_FB_OUTPUT .= '</div>'; // closing main div for fb photos, groups etc
 
 		$FTS_FB_OUTPUT .= ob_get_clean();
 
@@ -651,7 +658,7 @@ class Facebook_Feed {
 			
 		switch ($FBtype) {
 		case 'events':	
-			$output = '<a href="http://facebook.com/events/'.$single_event_id.'" target="_blank" class="fts-jal-fb-see-more">'.__('View on Facebook', 'feed-them-social').'</a>';
+			$output = '<a href="http://facebook.com/events/'.$single_event_id.'" target="_blank" class="fts-jal-fb-see-more">'.'View on Facebook'.'</a>';
 			return $output;
 		case 'photo':
 		if (!empty($FBlink)) {
@@ -680,13 +687,13 @@ class Facebook_Feed {
 			else {
 				$output .= ''.$lcs_array['likes'].' '.$lcs_array['comments'].' &nbsp;&nbsp;';
 			}
-			$output .='&nbsp;'.__('View on Facebook', 'feed-them-social').'</a>';
+			$output .='&nbsp;'.'View on Facebook'.'</a>';
 			return $output;
 		default:
 			
 		if ($FB_Shortcode['type'] == 'reviews' && is_plugin_active('feed-them-social-facebook-reviews/feed-them-social-facebook-reviews.php')){
 			$output = '';
-			$output .= ' <a href="https://facebook.com/'.$FB_Shortcode['id'].'/reviews" target="_blank" class="fts-jal-fb-see-more">'.__('See More Reviews', 'feed-them-social').'</a>';
+			$output .= ' <a href="https://facebook.com/'.$FB_Shortcode['id'].'/reviews" target="_blank" class="fts-jal-fb-see-more">'.'See More Reviews'.'</a>';
 		}	
 		else{
 			$output = '<a href="https://facebook.com/'.$FBpost_user_id.'/posts/'.$FBpost_single_id.'" target="_blank" class="fts-jal-fb-see-more">';
@@ -846,4 +853,135 @@ class Facebook_Feed {
 			// }
 		}
 	}
+	//**************************************************
+	// Facebook LoadMore
+	//**************************************************
+	function fts_facebook_loadmore($atts,$feed_data, $FBtype, $FB_Shortcode) {
+	var_dump($feed_data->paging->next); die();
+		$LOADMORE_OUPUT = '';
+			if ((isset($FB_Shortcode['loadmore']) && $FB_Shortcode['loadmore'] == 'button' || isset($FB_Shortcode['loadmore']) && $FB_Shortcode['loadmore'] == 'autoscroll') && (is_plugin_active('feed-them-premium/feed-them-premium.php') && $FB_Shortcode['type'] !== 'reviews' || is_plugin_active('feed-them-social-facebook-reviews/feed-them-social-facebook-reviews.php') && $FB_Shortcode['type'] == 'reviews')) {		
+					//******************
+					//Load More BUTTON Start
+					//****************** 
+					$build_shortcode = '[fts facebook';
+					foreach ($atts as $attribute => $value) {
+						$build_shortcode .= ' '.$attribute.'='.$value;
+					}
+					$build_shortcode .= ']';
+					$_REQUEST['next_url'] = isset($feed_data->paging->next) ? $feed_data->paging->next : "";
+					//If events array Flip it so it's in proper order
+					if ($FB_Shortcode['type'] == 'events') {
+						$key_needed = isset($set_zero);
+						$single_event_id = isset($data->data[$key_needed]->id);
+						$single_event_info = json_decode($single_event_array_response['event_single_'.$single_event_id.'_info']);
+						$FB_event_start_time = date('Y-m-d', strtotime($single_event_info->start_time));
+						if(isset($FB_event_start_time) && $FB_event_start_time  !== '1969-12-31'){
+							$_REQUEST['next_url'] = isset($data->paging->next) ? 'https://graph.facebook.com/'.$FB_Shortcode['id'].'/events?since='.$FB_event_start_time.'&access_token='.$access_token.$language.'' : "";
+						}
+						else{
+							$_REQUEST['next_url'] = 'no more';
+						}
+					}
+			$LOADMORE_OUPUT .= '<script>';
+			$LOADMORE_OUPUT .= 'var nextURL_'.$_REQUEST['fts_dynamic_name'].'= "'.$_REQUEST['next_url'].'";';
+			$LOADMORE_OUPUT .= '</script>';
+					//Make sure it's not ajaxing
+					if (!isset($_GET['load_more_ajaxing']) && !isset($_REQUEST['fts_no_more_posts']) && !empty($FB_Shortcode['loadmore'])) {
+						$fts_dynamic_name = $_REQUEST['fts_dynamic_name'];
+						$time = time();
+						$nonce = wp_create_nonce($time."load-more-nonce");
+						$fts_fix_loadmore = get_option('fts_fix_loadmore');
+						$fts_dynamic_class_name = $this->get_fts_dynamic_class_name();
+			$LOADMORE_OUPUT .= '<script>';
+				 $LOADMORE_OUPUT .= 'jQuery(document).ready(function() {';
+						if ($FB_Shortcode['loadmore'] == 'autoscroll') { 
+							// this is where we do SCROLL function to LOADMORE if = autoscroll in shortcode
+							$LOADMORE_OUPUT .= 'jQuery(".'.$fts_dynamic_class_name.'").bind("scroll",function() {';
+				   				 $LOADMORE_OUPUT .= 'if(jQuery(this).scrollTop() + jQuery(this).innerHeight() >= jQuery(this)[0].scrollHeight) {';
+					    }
+						else { 
+							// this is where we do CLICK function to LOADMORE if  = button in shortcode
+							$LOADMORE_OUPUT .= 'jQuery("#loadMore_'.$fts_dynamic_name.'").click(function() {';
+						}
+								$LOADMORE_OUPUT .= 'jQuery("#loadMore_'.$fts_dynamic_name.'").addClass("fts-fb-spinner");';
+								$bounce = "<div class='bounce1'></div><div class='bounce2'></div><div class='bounce3'></div>";
+									$LOADMORE_OUPUT .= 'var button = jQuery("#loadMore_'.$fts_dynamic_name.'").html("'.$bounce.'");';
+									$LOADMORE_OUPUT .= 'console.log(button);';
+									$LOADMORE_OUPUT .= 'var build_shortcode = "'. (!empty($fts_fix_loadmore) ? '['.$build_shortcode.']' : $build_shortcode).'";';
+									$LOADMORE_OUPUT .= 'var yes_ajax = "yes";';
+									$LOADMORE_OUPUT .= 'var fts_d_name = "'.$fts_dynamic_name.'";';
+									$LOADMORE_OUPUT .= 'var fts_security = "'.$nonce.'";';
+									$LOADMORE_OUPUT .= 'var fts_time = "'.$time.'";';
+								$LOADMORE_OUPUT .= 'jQuery.ajax({';
+									$LOADMORE_OUPUT .= 'data: {action: "my_fts_fb_load_more", next_url: nextURL_'.$fts_dynamic_name.', fts_dynamic_name: fts_d_name, rebuilt_shortcode: build_shortcode, load_more_ajaxing: yes_ajax, fts_security: fts_security, fts_time: fts_time},';
+									$LOADMORE_OUPUT .= 'type: "GET",';
+									$LOADMORE_OUPUT .= 'url: myAjaxFTS,';
+									$LOADMORE_OUPUT .= 'success: function( data ) {';
+										$LOADMORE_OUPUT .= 'console.log("Well Done and got this from sever: " + data);';
+							    if ($FBtype && $FB_Shortcode['type'] == 'albums'|| $FBtype && $FB_Shortcode['type'] == 'album_photos' && $FB_Shortcode['video_album'] !== 'yes' || $FB_Shortcode['grid'] == 'yes') {
+								 	$LOADMORE_OUPUT .= 'jQuery(".'.$fts_dynamic_class_name.'").append(data).filter(".'.$fts_dynamic_class_name.'").html();';
+																$LOADMORE_OUPUT .= 'jQuery(".'.$fts_dynamic_class_name.'").masonry( "reloadItems");';
+															$LOADMORE_OUPUT .= 'setTimeout(function() {';
+															// Do something after 3 seconds
+															// This can be direct code, or call to some other function												
+													$LOADMORE_OUPUT .= 'jQuery(".'.$fts_dynamic_class_name.'").masonry("layout");';
+														$LOADMORE_OUPUT .= '}, 500);';
+									$LOADMORE_OUPUT .= 'if(!nextURL_'.$_REQUEST['fts_dynamic_name'].' || nextURL_'.$_REQUEST['fts_dynamic_name'].' == "no more"){';
+									if ($FB_Shortcode['type'] == 'reviews') {
+										$LOADMORE_OUPUT .= 'jQuery("#loadMore_'.$fts_dynamic_name.'").replaceWith(\'<div class="fts-fb-load-more no-more-posts-fts-fb">'.__('No More Reviews', 'feed-them-social').'</div>\');';
+									} else {
+										$LOADMORE_OUPUT .= 'jQuery("#loadMore_'.$fts_dynamic_name.'").replaceWith(\'<div class="fts-fb-load-more no-more-posts-fts-fb">'.__('No More Photos', 'feed-them-social').'</div>\');';
+
+									}
+									
+									 $LOADMORE_OUPUT .= ' jQuery("#loadMore_'.$fts_dynamic_name.'").removeAttr("id");';
+									  $LOADMORE_OUPUT .= 'jQuery(".'.$fts_dynamic_class_name.'").unbind("scroll");';
+									$LOADMORE_OUPUT .= '}';
+							   }
+						       else { 
+									if(isset($FB_Shortcode['video_album']) && $FB_Shortcode['video_album'] == 'yes') { 
+										$LOADMORE_OUPUT .= 'var result = jQuery(data).insertBefore( jQuery("#output_'.$fts_dynamic_name.'") );';						
+										$LOADMORE_OUPUT .= 'var result = jQuery(".feed_dynamic_'.$fts_dynamic_name.'_album_photos").append(data).filter("#output_'.$fts_dynamic_name.'").html();';
+									}else{
+										$LOADMORE_OUPUT .= 'var result = jQuery("#output_'.$fts_dynamic_name.'").append(data).filter("#output_'.$fts_dynamic_name.'").html();';
+									} 
+									$LOADMORE_OUPUT .= 'jQuery("#output_'.$fts_dynamic_name.'").html(result);';
+									$LOADMORE_OUPUT .= 'if(!nextURL_'.$_REQUEST['fts_dynamic_name'].' || nextURL_'.$_REQUEST['fts_dynamic_name'].' == "no more"){';
+									//Reviews
+									if ($FB_Shortcode['type'] == 'reviews') {
+										$LOADMORE_OUPUT .= 'jQuery("#loadMore_'.$fts_dynamic_name.'").replaceWith(\'<div class="fts-fb-load-more no-more-posts-fts-fb">'.__('No More Reviews', 'feed-them-social').'</div>\');';
+									}else {
+										$LOADMORE_OUPUT .= 'jQuery("#loadMore_'.$fts_dynamic_name.'").replaceWith(\'<div class="fts-fb-load-more no-more-posts-fts-fb">'.__('No More Posts', 'feed-them-social').'</div>\');';
+									}
+									  $LOADMORE_OUPUT .= 'jQuery("#loadMore_'.$fts_dynamic_name.'").removeAttr("id");';
+									  $LOADMORE_OUPUT .= 'jQuery(".'.$fts_dynamic_class_name.'").unbind("scroll");';
+									$LOADMORE_OUPUT .= '}';
+								}
+									$LOADMORE_OUPUT .= 'jQuery("#loadMore_'.$fts_dynamic_name.'").html("'.__('Load More', 'feed-them-social').'");';
+								 //jQuery("#loadMore_'.$fts_dynamic_name.'").removeClass("flip360-fts-load-more");
+								 $LOADMORE_OUPUT .= 'jQuery("#loadMore_'.$fts_dynamic_name.'").removeClass("fts-fb-spinner");';
+									$LOADMORE_OUPUT .= '}';
+								$LOADMORE_OUPUT .= '});';// end of ajax()
+								$LOADMORE_OUPUT .= 'return false;';
+								 // string $scrollMore is at top of this js script. acception for scroll option closing tag
+						if ($FB_Shortcode['loadmore'] == 'autoscroll' ) {
+											$LOADMORE_OUPUT .= '}';// end of scroll ajax load.
+						 }
+					  $LOADMORE_OUPUT .= '});';// end of document.ready
+				  $LOADMORE_OUPUT .= '});';// end of form.submit
+			$LOADMORE_OUPUT .= '</script>';
+					}//End Check
+					// main closing div not included in ajax check so we can close the wrap at all times
+					//Make sure it's not ajaxing
+					if (!isset($_GET['load_more_ajaxing'])) {
+						$fts_dynamic_name = $_REQUEST['fts_dynamic_name'];
+						// this div returns outputs our ajax request via jquery appenc html from above  style="display:nonee;"
+						$LOADMORE_OUPUT .=  '<div id="output_'.$fts_dynamic_name.'"></div>';
+						if ((is_plugin_active('feed-them-premium/feed-them-premium.php') && $FB_Shortcode['type'] !== 'reviews' || is_plugin_active('feed-them-social-facebook-reviews/feed-them-social-facebook-reviews.php') && $FB_Shortcode['type'] == 'reviews') && $FB_Shortcode['loadmore'] == 'autoscroll') {
+							$LOADMORE_OUPUT .=  '<div id="loadMore_'.$fts_dynamic_name.'" class="fts-fb-load-more fts-fb-autoscroll-loader">Facebook</div>';
+						}
+					}
+			}// end of if loadmore is button or autoscroll
+			return $LOADMORE_OUPUT;
+		}//End Loadmore/Scroll
 }

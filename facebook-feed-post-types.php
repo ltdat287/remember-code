@@ -556,6 +556,7 @@ class FTS_Facebook_Feed_Post_Types extends Facebook_Feed{
 			$final_FBpost_like_count = isset($final_FBpost_like_count) ? $final_FBpost_like_count : "";
 			$final_FBpost_comments_count = isset($final_FBpost_comments_count) ? $final_FBpost_comments_count : "";
 			$single_event_id = isset($single_event_id) ? $single_event_id : "";
+
 			$FTS_FB_OUTPUT .= $this->fts_facebook_post_see_more($FBlink, $lcs_array, $FBtype, $FBpost_id, $FB_Shortcode, $FBpost_user_id, $FBpost_single_id, $single_event_id,$post_data);
 			$FTS_FB_OUTPUT .= '<div class="clear"></div>';
 			$FTS_FB_OUTPUT .= '</div>';
