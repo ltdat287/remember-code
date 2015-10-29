@@ -23,6 +23,31 @@ class Facebook_Feed {
 							);
 
 	//**************************************************
+	// Create function getoption for php
+	//**************************************************
+	function get_option( $option, $default = '' )
+	{
+		$default_options = array(
+			'fts-timezone' => 'Asia/Ho_Chi_Minh',
+			'fb_show_follow_btn' => 'like-button-faces', //like-button-share-faces, like-button-faces, like-box-faces, like-button-share
+			'fb_show_follow_like_box_cover' => 'fb_like_box_cover-yes', //fb_like_box_cover-yes
+			'fb_language' => 'en_US',
+			'fb_app_ID' => '1463338250663058',
+			'fb_like_btn_color' => '',
+			);
+		if ( !empty($option) ) {
+
+			return $default;
+		}
+		if ( in_array($option, $default_options) ) {
+
+			return $default_options[$option];
+		} else {
+
+			return $default;
+		}
+	}
+	//**************************************************
 	// Display Facebook Feed
 	//**************************************************
 	function fts_fb_func() {
@@ -72,9 +97,9 @@ class Facebook_Feed {
 			// 		}
 			// 	}
 			//
-				echo'<pre>';
-					print_r($feed_data);
-				echo'</pre>';
+				// echo'<pre>';
+				// 	print_r($feed_data);
+				// echo'</pre>';
 			//If events array Flip it so it's in proper order
 			if ($FB_Shortcode['type'] == 'events') {
 				if($feed_data->data){
@@ -102,7 +127,7 @@ class Facebook_Feed {
 				$page_data->name = isset($page_data->name) ? $page_data->name : "";
 				// fts-fb-header-wrapper (for grid)
 				$FTS_FB_OUTPUT .= isset($FB_Shortcode['grid']) && $FB_Shortcode['grid'] !== 'yes' ? '<div class="fts-fb-header-wrapper">' : '';
-					//Header 
+					//Header
 					$FTS_FB_OUTPUT .= '<div class="fts-jal-fb-header">';
 						// $FTS_FB_OUTPUT .= our Facebook Page Title or About Text. Commented out the group description because in the future we will be adding the about description.
 						$FTS_FB_OUTPUT .= isset($FB_Shortcode['title']) && $FB_Shortcode['title'] == 'yes' || isset($FB_Shortcode['title']) && $FB_Shortcode['title'] == '' ? '<h1><a href="'.$fts_view_fb_link.'" target="_blank">'.$page_data->name.'</a></h1>' : '';
@@ -111,12 +136,39 @@ class Facebook_Feed {
 					//END Header
 					$FTS_FB_OUTPUT .= '</div>';
 				// Close fts-fb-header-wrapper
-				$FTS_FB_OUTPUT .= isset($FB_Shortcode['grid']) && $FB_Shortcode['grid'] !== 'yes' && $FB_Shortcode['type'] !== 'album_photos' && $FB_Shortcode['type'] !== 'albums' ? '</div>' : ''; 
+				$FTS_FB_OUTPUT .= isset($FB_Shortcode['grid']) && $FB_Shortcode['grid'] !== 'yes' && $FB_Shortcode['type'] !== 'album_photos' && $FB_Shortcode['type'] !== 'albums' ? '</div>' : '';
 			} //End check
 			//******************
 			// SOCIAL BUTTON
 			//******************
 			$FTS_FB_OUTPUT .= $this->fb_social_btn_placement($FB_Shortcode, $access_token, 'fb-like-top-below-title');
+			//*********************
+			// Feed Header
+			//*********************
+			//Make sure it's not ajaxing
+				if (!isset($_GET['load_more_ajaxing'])) {
+						if (!isset($FBtype) && $FB_Shortcode['type'] == 'albums' || !isset($FBtype) && $FB_Shortcode['type'] == 'album_photos' || isset($FB_Shortcode['grid']) && $FB_Shortcode['grid'] == 'yes') {
+								if(isset($FB_Shortcode['video_album']) && $FB_Shortcode['video_album'] == 'yes' ){ } else {
+								wp_enqueue_script( 'fts-masonry-pkgd', plugins_url( 'feed-them-social/feeds/js/masonry.pkgd.min.js'), array( 'jquery' ) ); 
+				$FTS_FB_OUTPUT .='<script>';
+						 $FTS_FB_OUTPUT .='jQuery(window).load(function(){';
+							 $FTS_FB_OUTPUT .='jQuery(".'.$fts_dynamic_class_name.'").masonry({';
+				             $FTS_FB_OUTPUT .='itemSelector: ".fts-jal-single-fb-post"';
+				            $FTS_FB_OUTPUT .='});';
+						 $FTS_FB_OUTPUT .='});';
+				        $FTS_FB_OUTPUT .='</script>';
+				       } 
+			if (!isset($FBtype) && $FB_Shortcode['type'] == 'albums' || !isset($FBtype) && $FB_Shortcode['type'] == 'album_photos' ) {  
+	$FTS_FB_OUTPUT .= '<div class="fts-slicker-facebook-photos fts-slicker-facebook-albums '.(isset($FB_Shortcode['video_album']) && $FB_Shortcode['video_album'] && $FB_Shortcode['video_album'] == 'yes' ? 'popup-video-gallery-fb' : ' popup-gallery-fb masonry js-masonry').' '.(isset($FB_Shortcode['images_align']) && $FB_Shortcode['images_align'] ? ' popup-video-gallery-align-'.$FB_Shortcode['images_align'] : '').' popup-gallery-fb '.$fts_dynamic_class_name.'" style="margin:auto;" data-masonry-options=\'{ "isFitWidth": '.($FB_Shortcode['center_container'] == 'no' ? 'false' : 'true') .' '.($FB_Shortcode['image_stack_animation'] == 'no' ? ', "transitionDuration": 0' : '').'}\'>';
+			}
+				if (isset($FB_Shortcode['grid']) && $FB_Shortcode['grid'] == 'yes') { 
+	$FTS_FB_OUTPUT .='<div class="fts-slicker-facebook-posts masonry js-masonry '.($FB_Shortcode['popup'] == 'yes' ? 'popup-gallery-fb-posts ' : '').($FB_Shortcode['type'] == 'reviews' ? 'fts-reviews-feed ' : '').$fts_dynamic_class_name.' " style="margin:auto;" data-masonry-options=\'{ "isFitWidth": '.($FB_Shortcode['center_container'] == 'no' ? 'false' : 'true').' '.($FB_Shortcode['image_stack_animation'] == 'no' ? ', "transitionDuration": 0' : '').'}\'>';
+	            }
+				}
+				else { 
+					$FTS_FB_OUTPUT .= '<div class="fts-jal-fb-group-display fts-simple-fb-wrapper '.(isset($FB_Shortcode['popup']) && $FB_Shortcode['popup'] == 'yes' ? 'popup-gallery-fb-posts ' :'').($FB_Shortcode['type'] == 'reviews' ? 'fts-reviews-feed ' : '').$fts_dynamic_class_name.' '.($FB_Shortcode['height'] !== 'auto' && empty($FB_Shortcode['height']) == NULL ? 'fts-fb-scrollable" style="height:'.$FB_Shortcode['height'].'"' : '"').'>';
+				}
+			} //End ajaxing Check
 	}
 
 	//**************************************************
@@ -200,7 +252,7 @@ class Facebook_Feed {
 	//**************************************************
 	function get_language() {
 		//this check is in place because we used this option and it failed for many people because we use wp get contents instead of curl
-		// this can be removed in a future update and just keep the $language_option = get_option('fb_language', 'en_US');
+		// this can be removed in a future update and just keep the $language_option = $this->get_option('fb_language', 'en_US');
 		$language_option_check = '';
 		if (isset($language_option_check) && $language_option_check !== 'Please Select Option') {
 			$language_option = 'en_US';
@@ -226,7 +278,7 @@ class Facebook_Feed {
 			}
 			//Event
 			elseif ($FB_Shortcode['type'] == 'events') {
-				date_default_timezone_set(get_option('fts-timezone'));
+				date_default_timezone_set($this->get_option('fts-timezone'));
 				$date = date('Y-m-d');
 				$mulit_data = array('page_data' => 'https://graph.facebook.com/'.$FB_Shortcode['id'].'?fields=id,name&access_token='.$access_token.$language.'');
 				//Check If Ajax next URL needs to be used
@@ -373,8 +425,8 @@ class Facebook_Feed {
 	function fts_get_feed_cache($fb_cache_name)
 	{
 		$data_cache = __DIR__ . '/' .$fb_cache_name;
-		$response = json_decode(file_get_contents($data_cache));
-// var_dump($response); die();
+		$response = json_decode(file_get_contents($data_cache), true);
+
 		return $response;
 	}
 
@@ -438,10 +490,9 @@ class Facebook_Feed {
 							break;
 					}
 				}
-			return $output ;	
+			return $output ;
 			}
 	}
-
 	//**************************************************
 	// Create a random string
 	//**************************************************
@@ -453,5 +504,104 @@ class Facebook_Feed {
 			$randomString .= $characters[rand(0, $charactersLength - 1)];
 		}
 		return $randomString;
+	}
+	//**************************************************
+	// Social Follow Button.
+	//**************************************************
+	function social_follow_button($feed, $user_id, $access_token = NULL) {
+
+		global $channel_id, $playlist_id, $username_subscribe_btn, $username;
+		$output = '';
+		switch ($feed) {
+		case 'facebook':
+				//Facebook settings options for follow button
+				$fb_show_follow_btn = $this->get_option('fb_show_follow_btn');
+				$fb_show_follow_like_box_cover = $this->get_option('fb_show_follow_like_box_cover');
+				$language_option_check = $this->get_option('fb_language');
+				$fb_app_ID = $this->get_option('fb_app_ID');
+
+				if (isset($language_option_check) && $language_option_check !== 'Please Select Option') {
+					$language_option = $this->get_option('fb_language', 'en_US');
+				}
+				else {
+							$language_option = 'en_US';
+				}
+				$fb_like_btn_color = $this->get_option('fb_like_btn_color', 'light');
+			//	var_dump( $fb_like_btn_color ); /* outputs 'default_value' */
+
+				$show_faces = $fb_show_follow_btn == 'like-button-share-faces' || $fb_show_follow_btn == 'like-button-faces' || $fb_show_follow_btn == 'like-box-faces' ? 'true' : 'false';
+				$share_button = $fb_show_follow_btn == 'like-button-share-faces' || $fb_show_follow_btn == 'like-button-share' ? 'true' : 'false';
+				$page_cover = $fb_show_follow_like_box_cover == 'fb_like_box_cover-yes' ? 'true' : 'false';
+				if(!isset($_POST['fts_facebook_script_loaded'])){
+							$output .='<div id="fb-root"></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src = "//connect.facebook.net/'.$language_option.'/sdk.js#xfbml=1&appId='.$fb_app_ID.'&version=v2.3";
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, "script", "facebook-jssd"));</script>';
+							$_POST['fts_facebook_script_loaded'] = 'yes';
+				}
+				//Page Box
+				if($fb_show_follow_btn == 'like-box' || $fb_show_follow_btn == 'like-box-faces') {
+					$output .='<div class="fb-page" data-href="https://www.facebook.com/'.$user_id.'" data-hide-cover="'.$page_cover.'" data-show-facepile="'.$show_faces.'" data-show-posts="false"></div>';
+				}
+				//Like Button
+				else{
+					$output .='<div class="fb-like" data-href="https://www.facebook.com/'.$user_id.'" data-layout="standard" data-action="like" data-colorscheme="'.$fb_like_btn_color.'" data-show-faces="'.$show_faces.'" data-share="'.$share_button.'" data-width:"100%"></div>';
+				}
+				return $output;
+			break;
+		case 'instagram':
+			$output .='<a href="https://instagram.com/'.$user_id.'/" target="_blank">Follow on Instagram</a>';
+			print $output;
+			break;
+		case 'twitter':
+			if(!isset($_POST['fts_twitter_script_loaded'])){
+				$output .='<script>window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));</script>';
+				$_POST['fts_twitter_script_loaded'] = 'yes';
+			}
+			$output .='<a class="twitter-follow-button" href="https://twitter.com/'.$user_id.'" data-show-count="false" data-lang="en"> Follow @'.$user_id.'</a>';
+			print $output;
+			break;
+		case 'pinterest':
+				if(!isset($_POST['fts_pinterest_script_loaded'])){
+					$output .='
+					<script>
+						jQuery(function () {
+						   	//then load the JavaScript file
+						    jQuery.getScript("//assets.pinterest.com/js/pinit.js");
+						});
+					</script>
+					';
+					$_POST['fts_pinterest_script_loaded'] = 'yes';
+				}
+
+				$output .='<a data-pin-do="buttonFollow" href="http://www.pinterest.com/'.$user_id.'/">Follow @'.$user_id.'</a>';
+
+				return $output;
+			break;
+		case 'youtube':
+				if(!isset($_POST['fts_youtube_script_loaded'])){
+					$output .='<script src="https://apis.google.com/js/platform.js"></script>';
+					$_POST['fts_youtube_script_loaded'] = 'yes';
+				}
+					if($channel_id == '' && $playlist_id == '' && $username !== '' || $playlist_id !== '' && $username_subscribe_btn !== ''){
+
+								if($username_subscribe_btn !== ''){
+										$output .='<div class="g-ytsubscribe" data-channel="'.$username_subscribe_btn.'" data-layout="full" data-count="default"></div>';
+								}
+								else {
+										$output .='<div class="g-ytsubscribe" data-channel="'.$user_id.'" data-layout="full" data-count="default"></div>';
+								}
+
+					}
+					elseif($channel_id !== '' && $playlist_id !== '' || $channel_id !== '') {
+						$output .='<div class="g-ytsubscribe" data-channelid="'.$channel_id.'" data-layout="full" data-count="default"></div>';
+					}
+				print $output;
+			break;
+		}
 	}
 }
