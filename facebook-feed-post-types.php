@@ -177,7 +177,7 @@ class FTS_Facebook_Feed_Post_Types extends Facebook_Feed{
 						if (isset($FB_Shortcode['popup']) && $FB_Shortcode['popup'] == 'yes') {
 							$FTS_FB_OUTPUT .= '<div class="fts-fb-caption fts-fb-album-view-link" style="display:block;">';
 							if ($FBalbum_cover) {
-								$FTS_FB_OUTPUT .= '<a href="https://graph.facebook.com/'.$FBalbum_cover.'/picture" class="fts-view-album-photos-large" target="_blank">'.__('View Photo', 'feed-them-social').'</a></div>';
+								$FTS_FB_OUTPUT .= '<a href="https://graph.facebook.com/'.$FBalbum_cover.'/picture" class="fts-view-album-photos-large" target="_blank">'.'View Photo'.'</a></div>';
 							}
 							elseif (isset($FB_Shortcode['video_album']) && $FB_Shortcode['video_album'] == 'yes') {
 								if ($FB_Shortcode['play_btn'] !== 'yes') {
@@ -188,7 +188,7 @@ class FTS_Facebook_Feed_Post_Types extends Facebook_Feed{
 							else {
 								$FTS_FB_OUTPUT .= '<a href="https://graph.facebook.com/'.$FBpost_id.'/picture" class="fts-view-album-photos-large" target="_blank">'.__('View Photo', 'feed-them-social').'</a></div>';
 							}
-							$FTS_FB_OUTPUT .= '<div class="fts-fb-caption"><a class="view-on-facebook-albums-link" href="'.$FBlink.'" target="_blank">'.__('View on Facebook', 'feed-them-social').'</a></div>';
+							$FTS_FB_OUTPUT .= '<div class="fts-fb-caption"><a class="view-on-facebook-albums-link" href="'.$FBlink.'" target="_blank">'.'View on Facebook'.'</a></div>';
 						}
 						$FTS_FB_OUTPUT .= '<div class="clear"></div></div>';
 					}
@@ -480,7 +480,7 @@ class FTS_Facebook_Feed_Post_Types extends Facebook_Feed{
 					$FTS_FB_OUTPUT .= 'style="line-height:'.$FB_Shortcode['image_height'].' !important;"';
 				}
 				$FTS_FB_OUTPUT .= '>';
-					$FTS_FB_OUTPUT .= isset($FB_Shortcode['popup']) && $FB_Shortcode['popup'] == 'yes' ? '<div class="fts-fb-caption"><a href="'.$FBlink.'" class="fts-view-on-facebook-link" target="_blank">'.__('View on Facebook', 'feed-them-social').'</a></div> ' : '';
+					$FTS_FB_OUTPUT .= isset($FB_Shortcode['popup']) && $FB_Shortcode['popup'] == 'yes' ? '<div class="fts-fb-caption"><a href="'.$FBlink.'" class="fts-view-on-facebook-link" target="_blank">'.'View on Facebook'.'</a></div> ' : '';
 				//Output Photo Picture
 				if ($FBpost_object_id) {
 					if ($FBpost_object_id) {
