@@ -365,7 +365,10 @@ class Facebook_Feed {
 			  curl_setopt($curly[$id], CURLOPT_POSTFIELDS, $d['post']);
 			}
 		  }
-
+		  // Create array options need ssl cerifypeer
+			$options = [
+		        CURLOPT_SSL_VERIFYPEER => false,
+		    ];
 		  // extra options?
 		  if (!empty($options)) {
 			curl_setopt_array($curly[$id], $options);
