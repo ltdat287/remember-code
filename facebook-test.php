@@ -16,7 +16,7 @@ class Facebook_Feed {
 								'words' => '45',
 								'height' => '350',
 								'album_id' => '',
-								'type' => 'albums',
+								'type' => 'page',
 								'image_width' => '',
 								'image_height' => '',
 								'space_between_photos' => '',
@@ -26,10 +26,12 @@ class Facebook_Feed {
 								'image_position_lr' => '',
 								'image_position_top' => '',
 								'loadmore' => '',
-								'grid' => 'yes',
+								'grid' => 'no',
 								'colmn_width' => '200',
 								'space_between_posts' => '10',
 								'popup' => 'yes',
+								'video_album' => 'no',
+								'play_btn' => 'no',
 							);
 
 	//**************************************************
@@ -323,7 +325,7 @@ class Facebook_Feed {
 				//Check If Ajax next URL needs to be used
 				$mulit_data['feed_data'] = isset($_REQUEST['next_url']) ? $_REQUEST['next_url'] : 'https://graph.facebook.com/'.$FB_Shortcode['id'].'/feed?fields=id,caption,created_time,description,from,icon,link,message,name,object_id,picture,place,shares,source,status_type,story,to,type&limit='.$FB_Shortcode['posts'].'&access_token='.$access_token.$language.'';
 			}
-
+// var_dump($mulit_data); die();
 			$response = $this->fts_get_feed_json($mulit_data);
 
 			//Error Check
@@ -932,7 +934,7 @@ class Facebook_Feed {
 																$LOADMORE_OUPUT .= 'jQuery(".'.$fts_dynamic_class_name.'").masonry( "reloadItems");';
 															$LOADMORE_OUPUT .= 'setTimeout(function() {';
 															// Do something after 3 seconds
-															// This can be direct code, or call to some other function												
+															// This can be direct code, or call to some other function
 													$LOADMORE_OUPUT .= 'jQuery(".'.$fts_dynamic_class_name.'").masonry("layout");';
 														$LOADMORE_OUPUT .= '}, 500);';
 									$LOADMORE_OUPUT .= 'if(!nextURL_'.$_REQUEST['fts_dynamic_name'].' || nextURL_'.$_REQUEST['fts_dynamic_name'].' == "no more"){';
