@@ -25,7 +25,7 @@ class Facebook_Feed {
 								'image_stack_animation' => '',
 								'image_position_lr' => '',
 								'image_position_top' => '',
-								'loadmore' => '',
+								'loadmore' => 'button',
 								'grid' => 'no',
 								'colmn_width' => '200',
 								'space_between_posts' => '10',
@@ -153,10 +153,11 @@ class Facebook_Feed {
 			}// END POST foreach
 			// if(is_plugin_active('feed-them-premium/feed-them-premium.php') && $FB_Shortcode['type'] !== 'reviews' || is_plugin_active('feed-them-social-facebook-reviews/feed-them-social-facebook-reviews.php') && $FB_Shortcode['type'] == 'reviews'){
 			// var_dump($feed_data,$FBtype,$FB_Shortcode,$_REQUEST['fts_dynamic_name']); die();
-			// 	$FTS_FB_OUTPUT .= $this->fts_facebook_loadmore($atts,$feed_data,$FBtype,$FB_Shortcode,$_REQUEST['fts_dynamic_name']);
+				// $FTS_FB_OUTPUT .= $this->fts_facebook_loadmore($atts,$feed_data,$FBtype,$FB_Shortcode,$_REQUEST['fts_dynamic_name']);
+				// $FTS_FB_OUTPUT .= $this->fts_facebook_commentmore($feed_data,$FBtype,$FB_Shortcode);
 			// }
 			
-			// $FTS_FB_OUTPUT .= '</div>'; // closing main div for fb photos, groups etc
+			$FTS_FB_OUTPUT .= '</div>'; // closing main div for fb photos, groups etc
 
 		$FTS_FB_OUTPUT .= ob_get_clean();
 
@@ -865,20 +866,20 @@ class Facebook_Feed {
 		}
 	}
 	//**************************************************
-	// Facebook LoadMore
+	// Facebook LoadCommentMore
 	//**************************************************
-	function fts_facebook_loadmore($atts,$feed_data, $FBtype, $FB_Shortcode) {
-	var_dump($feed_data->paging->next); die();
+	function fts_facebook_commentmore($feed_data, $FBtype, $FB_Shortcode) {
+		// var_dump($feed_data, $FBtype, $FB_Shortcode); die();
 		$LOADMORE_OUPUT = '';
-			if ((isset($FB_Shortcode['loadmore']) && $FB_Shortcode['loadmore'] == 'button' || isset($FB_Shortcode['loadmore']) && $FB_Shortcode['loadmore'] == 'autoscroll') && (is_plugin_active('feed-them-premium/feed-them-premium.php') && $FB_Shortcode['type'] !== 'reviews' || is_plugin_active('feed-them-social-facebook-reviews/feed-them-social-facebook-reviews.php') && $FB_Shortcode['type'] == 'reviews')) {		
+			if ((isset($FB_Shortcode['loadmore']) && $FB_Shortcode['loadmore'] == 'button' || isset($FB_Shortcode['loadmore']) && $FB_Shortcode['loadmore'] == 'autoscroll')) {		
 					//******************
 					//Load More BUTTON Start
 					//****************** 
-					$build_shortcode = '[fts facebook';
-					foreach ($atts as $attribute => $value) {
-						$build_shortcode .= ' '.$attribute.'='.$value;
-					}
-					$build_shortcode .= ']';
+					// $build_shortcode = '[fts facebook';
+					// foreach ($atts as $attribute => $value) {
+					// 	$build_shortcode .= ' '.$attribute.'='.$value;
+					// }
+					// $build_shortcode .= ']';
 					$_REQUEST['next_url'] = isset($feed_data->paging->next) ? $feed_data->paging->next : "";
 					//If events array Flip it so it's in proper order
 					if ($FB_Shortcode['type'] == 'events') {
@@ -894,6 +895,7 @@ class Facebook_Feed {
 						}
 					}
 			$LOADMORE_OUPUT .= '<script>';
+			$this->get_facebook_feed_dynamic_name($FB_Shortcode);
 			$LOADMORE_OUPUT .= 'var nextURL_'.$_REQUEST['fts_dynamic_name'].'= "'.$_REQUEST['next_url'].'";';
 			$LOADMORE_OUPUT .= '</script>';
 					//Make sure it's not ajaxing
@@ -995,4 +997,20 @@ class Facebook_Feed {
 			}// end of if loadmore is button or autoscroll
 			return $LOADMORE_OUPUT;
 		}//End Loadmore/Scroll
+	//**************************************************
+	// FB Dynamic Feed Name
+	//**************************************************
+	function get_facebook_feed_dynamic_name($FB_Shortcode){
+		return $_REQUEST['fts_dynamic_name'] = trim($this->rand_string(10).'_'.$FB_Shortcode['type']);
+	}
+	//**************************************************
+	// FB Dynamic Feed CLASS Name
+	//**************************************************
+	function get_facebook_feed_dynamic_class_name($fts_dynamic_name = null){
+			$fts_dynamic_class_name =  '';
+			if (isset($fts_dynamic_name)) {
+				$fts_dynamic_class_name =  'feed_dynamic_class'.$_REQUEST['fts_dynamic_name'];
+			}
+			return $fts_dynamic_class_name;
+	}
 }
