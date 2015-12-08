@@ -1,0 +1,56 @@
+<?php if (!defined('VB_ENTRY')) die('Access denied.');
+/*======================================================================*\
+|| #################################################################### ||
+|| # vBulletin 4.0.2
+|| # ---------------------------------------------------------------- # ||
+|| # Copyright ©2000-2010 vBulletin Solutions Inc. All Rights Reserved. ||
+|| # This file may not be redistributed in whole or significant part. # ||
+|| # ---------------- VBULLETIN IS NOT FREE SOFTWARE ---------------- # ||
+|| # http://www.vbulletin.com | http://www.vbulletin.com/license.html # ||
+|| #################################################################### ||
+\*======================================================================*/
+
+/**
+ * Test Widget Item
+ *
+ * @package vBulletin
+ * @author Edwin Brown, vBulletin Development Team
+ * @version $Revision: 34955 $
+ * @since $Date: 2010-01-13 17:30:49 -0600 (Wed, 13 Jan 2010) $
+ * @copyright vBulletin Solutions Inc.
+ */
+class vBCms_Item_Widget_myFriends extends vBCms_Item_Widget
+{
+	/*Properties====================================================================*/
+
+
+	/**
+	 * A package identifier.
+	 *
+	 * @var string
+	 */
+	protected $package = 'vBCms';
+
+	/**
+	 * A class identifier.
+	 *
+	 * @var string
+	 */
+	protected $class = 'myFriends';
+
+	/** The default configuration **/
+	protected $config = array(
+		'days'          => 7,
+		'count'         => 10,
+		'contenttypeid' => array(),
+		'template'      => '',
+		'template_name' => 'vbcms_widget_myfriends_page',
+	);
+
+}
+
+/*======================================================================*\
+|| ####################################################################
+|| # SVN: $Revision: 32878 $
+|| ####################################################################
+\*======================================================================*/

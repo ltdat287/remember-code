@@ -1,0 +1,44 @@
+.selected{
+position: relative;
+top: 1px;
+font:bold 11px Tahoma;
+color:#000;
+}
+.selected a{ /*selected main tab style */
+font:bold 11px Tahoma;
+color:#000;
+text-decoration: none;
+}
+.selected a:hover{ /*selected main tab style */
+text-decoration: none;
+}
+.noselected{
+position: relative;
+top: 1px;
+font:bold 11px Tahoma;
+color:#03897f;
+}
+.noselected a{ /*selected main tab style */
+font:bold 11px Tahoma;
+color:#03897f;
+text-decoration: none;
+}
+.noselected a:hover{ /*selected main tab style */
+text-decoration: none;
+}
+.top{
+position: relative;
+top: 1px;
+font:bold 10px Tahoma;
+color:#03897f;
+text-decoration: none;
+}
+.top a{ /*selected main tab style */
+font:bold 10px Tahoma;
+color:#03897f;
+text-decoration: none;
+}
+.top a:hover{ /*selected main tab style */
+text-decoration: none;
+color:#ff5c01;
+}

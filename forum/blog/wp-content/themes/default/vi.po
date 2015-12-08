@@ -1,0 +1,626 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress - kubrick\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/theme\n"
+"POT-Creation-Date: 2009-05-18 17:54+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Minh-Quân TRAN <contact@link2caro.com>\n"
+"Language-Team: link2caro <contact@link2caro.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Vietnamese\n"
+"X-Poedit-Country: VIET NAM\n"
+
+#: 404.php:12
+msgid "Error 404 - Not Found"
+msgstr "Lỗi 404 - Không tìm thấy"
+
+#: archive.php:16
+#, php-format
+msgid "Archive for the &#8216;%s&#8217; Category"
+msgstr "Lưu trữ của chuyên mục &#8216;%s&#8217;"
+
+#: archive.php:18
+#, php-format
+msgid "Posts Tagged &#8216;%s&#8217;"
+msgstr "Bài viết đính kèm thẻ &#8216;%s&#8217;"
+
+#: archive.php:20
+#, php-format
+msgid "Archive for %s|Daily archive page"
+msgstr "Lưu trữ trong ngày %s|Daily archive page"
+
+#: archive.php:20
+#: index.php:17
+msgid "F jS, Y"
+msgstr "d.m.Y"
+
+#: archive.php:22
+#, php-format
+msgid "Archive for %s|Monthly archive page"
+msgstr "Lưu trữ trong %s|Daily archive page"
+
+#: archive.php:22
+#: sidebar.php:33
+msgid "F, Y"
+msgstr "F Y"
+
+#: archive.php:24
+#, php-format
+msgid "Archive for %s|Yearly archive page"
+msgstr "Lưu trữ trong năm %s|Daily archive page"
+
+#: archive.php:24
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:26
+msgid "Author Archive"
+msgstr "Lưu trữ theo tác giả"
+
+#: archive.php:28
+msgid "Blog Archives"
+msgstr "Lưu trữ của trang web"
+
+#: archive.php:33
+#: archive.php:53
+#: index.php:29
+#: search.php:16
+#: search.php:33
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Bài viết cũ hơn"
+
+#: archive.php:34
+#: archive.php:54
+#: index.php:30
+#: search.php:17
+#: search.php:34
+msgid "Newer Entries &raquo;"
+msgstr "Bài viết mới hơn &raquo;"
+
+#: archive.php:39
+#: index.php:16
+#: search.php:24
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Đường dẫn tới %s"
+
+#: archive.php:40
+#: sidebar.php:30
+#: single.php:34
+msgid "l, F jS, Y"
+msgstr "l, d F Y"
+
+#: archive.php:46
+#: index.php:23
+#: search.php:27
+#: single.php:26
+msgid "Tags:"
+msgstr "Thẻ:"
+
+#: archive.php:46
+#: index.php:23
+#: search.php:27
+#, php-format
+msgid "Posted in %s"
+msgstr "Đăng trong %s"
+
+#: archive.php:46
+#: index.php:23
+#: search.php:27
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+#: archive.php:46
+#: index.php:23
+#: search.php:27
+msgid "No Comments &#187;"
+msgstr "Chưa có phản hồi &#187;"
+
+#: archive.php:46
+#: index.php:23
+#: search.php:27
+msgid "1 Comment &#187;"
+msgstr "1 phản hồi &#187;"
+
+#: archive.php:46
+#: index.php:23
+#: search.php:27
+msgid "% Comments &#187;"
+msgstr "% phản hồi &#187;"
+
+#: archive.php:46
+#: index.php:23
+#: search.php:27
+msgid "Comments Closed"
+msgstr "Phản hồi đã bị khóa"
+
+#: archive.php:59
+#, php-format
+msgid "Sorry, but there aren't any posts in the %s category yet."
+msgstr "Xin lỗi, hiện chưa có bài nào trong mục %s."
+
+#: archive.php:61
+msgid "Sorry, but there aren't any posts with this date."
+msgstr "Xin lỗi, không có bài nào được đăng trong ngày này."
+
+#: archive.php:64
+#, php-format
+msgid "Sorry, but there aren't any posts by %s yet."
+msgstr "Xin lõi, nhưng %s chưa có bài viết nào."
+
+#: archive.php:66
+msgid "No posts found."
+msgstr "Không tìm thấy bài viết nào."
+
+#: archives.php:17
+msgid "Archives by Month:"
+msgstr "Lưu trữ theo tháng:"
+
+#: archives.php:22
+msgid "Archives by Subject:"
+msgstr "Lưu trữ theo chủ đề:"
+
+#: comments-popup.php:9
+#, php-format
+msgid "%1$s - Comments on %2$s"
+msgstr "%1$s - Phản hồi cho %2$s"
+
+#: comments-popup.php:28
+msgid "Comments"
+msgstr "Phải hồi"
+
+#: comments-popup.php:30
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+msgstr "<abbr title=\"Dòng phản hồi RSS\">Dòng phản hồi RSS</abbr> của bài viết này."
+
+#: comments-popup.php:33
+#, php-format
+msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is: <em>%s</em>"
+msgstr "<abbr title=\"Liên kết\">Liên kết</abbr> tới TrackBack của bài này là: <em>%s</em>"
+
+#: comments-popup.php:51
+msgid "Comment"
+msgstr "Phản hồi"
+
+#: comments-popup.php:51
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments-popup.php:51
+msgid "Pingback"
+msgstr "Pingback"
+
+#: comments-popup.php:51
+#, php-format
+msgid "by %1$s &#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>"
+msgstr "bởi %1$s &#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>"
+
+#: comments-popup.php:57
+msgid "No comments yet."
+msgstr "Chưa có phản hồi nào."
+
+#: comments-popup.php:61
+msgid "Leave a comment"
+msgstr "Gửi phản hồi"
+
+#: comments-popup.php:62
+#, php-format
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: <code>%s</code>"
+msgstr "Dòng và đoạn được ngăn cách tự động, thư điện tử sẽ không hiển thị, <acronym title=\"Ngôn ngữ đánh dấu siêu văn bản\">HTML</acronym> được phép dùng: <code>%s</code>"
+
+#: comments-popup.php:66
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out &raquo;</a>"
+msgstr "Đăng nhập với tài khoản <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Đăng xuất\">Đăng xuất &raquo;</a>"
+
+#: comments-popup.php:70
+#: comments.php:72
+msgid "Name"
+msgstr "Tên"
+
+#: comments-popup.php:75
+msgid "E-mail"
+msgstr "Thư điện tử"
+
+#: comments-popup.php:80
+msgid "<abbr title=\"Universal Resource Locator\">URL</abbr>"
+msgstr "<abbr title=\"Liên kết\">Liên kết</abbr>"
+
+#: comments-popup.php:85
+msgid "Your Comment"
+msgstr "Phản hồi của bạn"
+
+#: comments-popup.php:93
+msgid "Say It!"
+msgstr "Gửi phản hồi!"
+
+#: comments-popup.php:98
+msgid "Sorry, the comment form is closed at this time."
+msgstr "Xin lỗi, phản hồi đã bị khóa."
+
+#: comments-popup.php:103
+msgid "Close this window."
+msgstr "Đóng cửa sổ này."
+
+#: comments-popup.php:109
+#: single.php:65
+msgid "Sorry, no posts matched your criteria."
+msgstr "Xin lỗi, không có bài nào thỏa mãn yêu cầu của bạn."
+
+#: comments-popup.php:113
+#, php-format
+msgid "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform\"><strong>WordPress</strong></a>"
+msgstr "Xây dựng trên <a href=\"%s\" title=\"Xây dựng trên WordPress\"><strong>WordPress</strong></a> - Việt hóa bởi <a href=\"http://link2caro.net\">link2caro</a> @ <a href=\"http://wordpressvn.net\">wordpressvn.net</a>"
+
+#: comments.php:12
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Bài này được bảo vệ bằng mật khẩu. Hãy nhập mật khẩu đề xem phải hồi."
+
+#: comments.php:21
+msgid "No Responses"
+msgstr "Chưa có hồi âm nào"
+
+#: comments.php:21
+msgid "One Response"
+msgstr "Có mộ hồi âm"
+
+#: comments.php:21
+msgid "% Responses"
+msgstr "% hồi âm"
+
+#: comments.php:21
+#, php-format
+msgid "to &#8220;%s&#8221;"
+msgstr "tới &#8220;%s&#8221;"
+
+#: comments.php:43
+msgid "Comments are closed."
+msgstr "Phản hồi đã bị khóa."
+
+#: comments.php:53
+msgid "Leave a Reply"
+msgstr "Gửi phản hồi"
+
+#: comments.php:53
+#, php-format
+msgid "Leave a Reply for %s"
+msgstr "Gửi phản hồi cho %s"
+
+#: comments.php:60
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Bạn phải <a href=\"%s\">đăng nhập</a> để gửi phản hồi."
+
+#: comments.php:67
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "Đăng nhập với tài khoản <a href=\"%1$s\">%2$s</a>."
+
+#: comments.php:67
+msgid "Log out of this account"
+msgstr "Đăng xuất"
+
+#: comments.php:67
+msgid "Log out &raquo;"
+msgstr "Đăng xuất &raquo;"
+
+#: comments.php:72
+#: comments.php:75
+msgid "(required)"
+msgstr "(yêu cầu)"
+
+#: comments.php:75
+msgid "Mail (will not be published)"
+msgstr "Thư điện tử (sẽ không hiển thị)"
+
+#: comments.php:78
+msgid "Website"
+msgstr "Trang web"
+
+#: comments.php:82
+#, php-format
+msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+msgstr "<strong>XHTML:</strong> Bạn có thể dùng các thẻ sau: <code>%s</code>"
+
+#: comments.php:86
+msgid "Submit Comment"
+msgstr "Gửi phản hồi"
+
+#: footer.php:12
+#, php-format
+msgid "%1$s is proudly powered by %2$s"
+msgstr "%1$s được xây dựng trên %2$s"
+
+#: footer.php:14
+#, php-format
+msgid "%1$s and %2$s."
+msgstr "%1$s và %2$s."
+
+#: footer.php:14
+msgid "Entries (RSS)"
+msgstr "Bài viết (RSS)"
+
+#: footer.php:14
+msgid "Comments (RSS)"
+msgstr "Phản hồi (RSS)"
+
+#: footer.php:15
+#, php-format
+msgid "%d queries. %s seconds."
+msgstr "%d yêu cầu SQL. %s giây."
+
+#: functions.php:156
+msgid "Custom Header"
+msgstr "Tùy chỉnh Header"
+
+#: functions.php:169
+msgid "Close Color Picker"
+msgstr "Đóng bảng chọn màu"
+
+#: functions.php:366
+msgid "Options saved."
+msgstr "Đã lưu các tùy chọn."
+
+#: functions.php:369
+msgid "Customize Header"
+msgstr "Tùy biến Header"
+
+#: functions.php:383
+#: functions.php:390
+msgid "Save"
+msgstr "Lưu thay đổi"
+
+#: functions.php:384
+msgid "Font Color:"
+msgstr "Màu chữ:"
+
+#: functions.php:384
+#, php-format
+msgid "Any CSS color (%s or %s or %s)"
+msgstr "Màu CSS (%s hoặc %s hoặc %s)"
+
+#: functions.php:385
+msgid "Upper Color:"
+msgstr "Màu trên:"
+
+#: functions.php:385
+#: functions.php:386
+#, php-format
+msgid "HEX only (%s or %s)"
+msgstr "HEX (%s hoặc %s)"
+
+#: functions.php:386
+msgid "Lower Color:"
+msgstr "Màu dưới:"
+
+#: functions.php:388
+msgid "Toggle Text"
+msgstr "Ẩn/Hiện văn bản"
+
+#: functions.php:389
+msgid "Use Defaults"
+msgstr "Dùng mặc định"
+
+#: functions.php:398
+msgid "Font Color"
+msgstr "Màu chữ"
+
+#: functions.php:399
+msgid "Upper Color"
+msgstr "Màu trên"
+
+#: functions.php:400
+msgid "Lower Color"
+msgstr "Màu dưới"
+
+#: functions.php:401
+msgid "Revert"
+msgstr "Hủy bỏ các thay đổi"
+
+#: functions.php:402
+msgid "Advanced"
+msgstr "Nâng cao"
+
+#: functions.php:409
+msgid "Update Header"
+msgstr "Cập nhật Header"
+
+#: functions.php:415
+msgid "Font Color (CSS):"
+msgstr "Mầu chữ (CSS):"
+
+#: functions.php:416
+msgid "Upper Color (HEX):"
+msgstr "Màu trên (HEX):"
+
+#: functions.php:417
+msgid "Lower Color (HEX):"
+msgstr "Màu dưới (HEX):"
+
+#: functions.php:418
+msgid "Select Default Colors"
+msgstr "Chọn màu mặc định"
+
+#: functions.php:419
+msgid "Toggle Text Display"
+msgstr "Ẩn/Hiện văn bản"
+
+#: index.php:20
+#: single.php:23
+msgid "Read the rest of this entry &raquo;"
+msgstr "Đọc tiếp &raquo;"
+
+#: index.php:35
+msgid "Not Found"
+msgstr "Không tìm thấy"
+
+#: index.php:36
+msgid "Sorry, but you are looking for something that isn&#8217;t here."
+msgstr "Xin lỗi, trang bạn đang tìm không tồn tại."
+
+#: links.php:16
+msgid "Links:"
+msgstr "Liên kết:"
+
+#: page.php:15
+msgid "Read the rest of this page &raquo;"
+msgstr "Đọc tiếp &raquo;"
+
+#: page.php:17
+#: single.php:25
+msgid "Pages:"
+msgstr "Trang:"
+
+#: page.php:22
+msgid "Edit this entry."
+msgstr "Chỉnh sửa"
+
+#: search.php:13
+msgid "Search Results"
+msgstr "Kết quả tìm kiếm"
+
+#: search.php:39
+msgid "No posts found. Try a different search?"
+msgstr "Không tìm thấy bài nào, hãy thử tìm với từ khóa khác?"
+
+#: sidebar.php:16
+msgid "Author"
+msgstr "Tác giả"
+
+#: sidebar.php:27
+#, php-format
+msgid "You are currently browsing the archives for the %s category."
+msgstr "Bạn đang xem lưu trữ của chuyên mục %s."
+
+#: sidebar.php:30
+#, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the day %3$s."
+msgstr "Bạn đang xem lưu trữ của trang <a href=\"%1$s/\">%2$s</a> trong ngày %3$s."
+
+#: sidebar.php:33
+#, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for %3$s."
+msgstr "Bạn đang xem lưu trữ của trang <a href=\"%1$s/\">%2$s</a> trong %3$s."
+
+#: sidebar.php:36
+#, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the year %3$s."
+msgstr "Bạn đang xem lưu trữ của trang <a href=\"%1$s/\">%2$s</a> trong năm %3$s."
+
+#: sidebar.php:39
+#, php-format
+msgid "You have searched the <a href=\"%1$s/\">%2$s</a> blog archives for <strong>&#8216;%3$s&#8217;</strong>. If you are unable to find anything in these search results, you can try one of these links."
+msgstr "Bạn vừa tìm <strong>&#8216;%3$s&#8217;</strong> trong lưu trữ của trang <a href=\"%1$s/\">%2$s</a>. Nếu bạn không tìm thấy gì mình cần, bạn có thể thử một trong các liên kết trên."
+
+#: sidebar.php:42
+#, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives."
+msgstr "Bạn đang xem lưu trữ của trang <a href=\"%1$s/\">%2$s</a>."
+
+#: sidebar.php:50
+msgid "Pages"
+msgstr "Trang"
+
+#: sidebar.php:52
+msgid "Archives"
+msgstr "Lưu trữ"
+
+#: sidebar.php:58
+msgid "Categories"
+msgstr "Chuyên mục"
+
+#: sidebar.php:64
+msgid "Meta"
+msgstr "Trình đơn"
+
+#: sidebar.php:68
+msgid "This page validates as XHTML 1.0 Transitional"
+msgstr "Trang này hợp chuẩn XHTML 1.0 Transitional"
+
+#: sidebar.php:68
+msgid "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
+msgstr "Kiểm tra <abbr title=\"Ngôn ngữ đánh dấu siêu văn bản mở rộng\">XHTML</abbr>"
+
+#: sidebar.php:69
+msgid "XHTML Friends Network"
+msgstr "Mạng lưới XHTML"
+
+#: sidebar.php:69
+msgid "XFN"
+msgstr "XFN"
+
+#: sidebar.php:70
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Xây dựng trên WordPress - Việt hóa bởi link2caro @ wordpressvn.net"
+
+#: single.php:34
+#, php-format
+msgid "This entry was posted %1$s on %2$s at %3$s and is filed under %4$s."
+msgstr "Bài này được đăng %1$s lúc %3$s ngày %2$s trong mục %4$s."
+
+#: single.php:35
+#, php-format
+msgid "You can follow any responses to this entry through the <a href='%s'>RSS 2.0</a> feed."
+msgstr "Bạn có thể theo dõi phản hồi của bài này với dòng phản hồi <a href='%s'>RSS 2.0</a>."
+
+#: single.php:39
+#, php-format
+msgid "You can <a href=\"#respond\">leave a response</a>, or <a href=\"%s\" rel=\"trackback\">trackback</a> from your own site."
+msgstr "Bạn có thể <a href=\"#respond\">gửi phản hồi</a>, hoặc <a href=\"%s\" rel=\"trackback\">trackback</a> từ trang web của bạn."
+
+#: single.php:43
+#, php-format
+msgid "Responses are currently closed, but you can <a href=\"%s\" rel=\"trackback\">trackback</a> from your own site."
+msgstr "Phản hồi đã bị khóa, nhưng bạn vẫn có thể <a href=\"%s\" rel=\"trackback\">trackback</a> từ trang web của bạn."
+
+#: single.php:47
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Bạn có thể bỏ qua phần còn lại và gửi phản hồi. Ping đã bị khóa."
+
+#: single.php:51
+msgid "Both comments and pings are currently closed."
+msgstr "Cả phản hồi và ping đều đã bị khóa."
+
+#: single.php:53
+msgid "Edit this entry"
+msgstr "Chỉnh sửa"
+
+#. Theme Name of an extension
+msgid "WordPress Default"
+msgstr "WordPress mặc định"
+
+#. Theme URI of an extension
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#. Description of an extension
+msgid "The default WordPress theme based on the famous <a href=\"http://binarybonsai.com/kubrick/\">Kubrick</a>."
+msgstr "Giao diện mặc định của WordPress dựa trên <a href=\"http://binarybonsai.com/kubrick/\">Kubrick</a>."
+
+#. Author of an extension
+msgid "Michael Heilemann"
+msgstr "Michael Heilemann"
+
+#. Author URI of an extension
+msgid "http://binarybonsai.com/"
+msgstr "http://binarybonsai.com/"
+
+#. Tags of an extension
+msgid "blue, custom header, fixed width, two columns, widgets"
+msgstr "xanh, header tùy chỉnh, chiều ngang cố định, hai cột, widget"
+
+#~ msgid "Header Image and Color"
+#~ msgstr "Ảnh và màu của Header"
+#~ msgid "%s RSS Feed"
+#~ msgstr "%s dòng thông tin RSS"
+#~ msgid "%s Atom Feed"
+#~ msgstr "%s dòng thông tin Atom"
+#~ msgid "This entry was posted on %1$s at %2$s and is filed under %3$s."
+#~ msgstr "Bài này được đăng lúc %2$s ngày %1$s trong mục %3$s."
+#~ msgid "Search for:"
+#~ msgstr "Tìm kiếm:"
+#~ msgid "Search"
+#~ msgstr "Tìm kiếm"
+

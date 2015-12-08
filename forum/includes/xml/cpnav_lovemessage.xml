@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<navgroups product="dt_love_message" master="true">
+
+	<navgroup phrase="dt_love_message" permissions="canadminsettings" hr="true" displayorder="10">
+
+		<navoption displayorder="10">
+			<phrase>love_message_settings</phrase>
+			<link><![CDATA[options.php?do=options&dogroup=dt_love_message]]></link>
+		</navoption>
+	</navgroup>	
+	<navgroup phrase="dt_love_message" permissions="canadminusers" hr="true" displayorder="10">
+		<navoption displayorder="20">
+			<phrase>love_message_moderate</phrase>
+			<link>../{$vbulletin->config[Misc][modcpdir]}/lovemessage.php?do=domoderate</link>
+		</navoption>
+		<navoption displayorder="30">
+			<phrase>love_message_manage</phrase>
+			<link>../{$vbulletin->config[Misc][modcpdir]}/lovemessage.php?do=manage</link>
+		</navoption>		
+	</navgroup>
+</navgroups>

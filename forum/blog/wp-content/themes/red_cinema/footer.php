@@ -1,0 +1,29 @@
+<div class="Footer">
+    <div class="Footer-inner">
+                <a href="<?php bloginfo('rss2_url'); ?>" class="rss-tag-icon" title="RSS"></a>
+                <div class="Footer-text">
+<p>
+<?php 
+ global $default_footer_content;
+ $footer_content = get_option('art_footer_content');
+ if ($footer_content === false) $footer_content = $default_footer_content;
+ echo $footer_content;
+?>
+</p>
+</div>
+    </div>
+    <div class="Footer-background">
+    </div>
+</div>
+
+		<div class="cleared"></div>
+    </div>
+</div>
+<div class="cleared"></div>
+<p class="page-footer">Powered by <a href="http://wordpress.org/">WordPress</a> and a theme by <a href="http://lånapengarbetalningsanmärkning.se>Lana pengar med Betalningsanmarkning</a>.</p>
+</div>
+
+<!-- <?php printf(__('%d queries. %s seconds.', 'kubrick'), get_num_queries(), timer_stop(0, 3)); ?> -->
+<div><?php wp_footer(); ?></div>
+</body>
+</html>

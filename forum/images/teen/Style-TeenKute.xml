@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<style name="Xanh Kute" vbversion="4.0.0" product="vbulletin" type="custom">
+	<templategroup name="Ungrouped Templates">
+		<template name="footer" templatetype="template" date="1261835598" username="ThangKho" version="4.0.0"><![CDATA[<div class="below_body">
+<div id="footer_time" class="shade footer_time">{vb:rawphrase all_times_are_gmt_x_time_now_is_y}</div>
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+	{vb:rawphrase powered_by_vbulletin}
+	<!-- Do not remove this copyright notice -->	
+</div>
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	{vb:raw cronimage}
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	{vb:raw vboptions.copyrighttext}
+</div>
+
+{vb:raw ad_location.ad_footer_end} 
+</div>
+
+
+{vb:raw ad_location.ad_footer_start}
+{vb:raw ad_location.global_above_footer}
+<div id="footer" class="floatcontainer footer">
+
+	<form action="{vb:raw vboptions.forumhome}.php" method="get" id="footer_select" class="footer_select">
+
+			
+		<vb:if condition="$show['quickchooser']">
+			<select name="styleid" onchange="switch_id(this, 'style')">
+				<optgroup label="{vb:rawphrase quick_style_chooser}">
+					{vb:raw quickchooserbits}
+				</optgroup>
+			</select>	
+		</vb:if>
+		
+		<vb:if condition="$show['languagechooser']">
+			<select name="langid" onchange="switch_id(this, 'lang')">
+				<optgroup label="{vb:rawphrase quick_language_chooser}">
+					{vb:raw languagechooserbits}
+				</optgroup>
+			</select>
+		</vb:if>
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		<vb:if condition="$show['contactus']"><li><a href="{vb:raw vboptions.contactuslink}" rel="nofollow" accesskey="9">{vb:rawphrase contact_us}</a></li></vb:if>
+		<vb:if condition="$vboptions['hometitle']"><li><a href="{vb:raw vboptions.homeurl}">{vb:raw vboptions.hometitle}</a></li></vb:if>
+		<vb:if condition="$show['admincplink']"><li><a href="{vb:raw admincpdir}/index.php{vb:raw session.sessionurl_q}">{vb:rawphrase admin}</a></li></vb:if>
+		<vb:if condition="$show['modcplink']"><li><a href="{vb:raw modcpdir}/index.php{vb:raw session.sessionurl_q}">{vb:rawphrase mod}</a></li></vb:if>
+		<vb:if condition="$vboptions['archiveenabled']"><li><a href="archive/index.php">{vb:rawphrase archive}</a></li></vb:if>
+		{vb:raw template_hook.footer_links}
+		<vb:if condition="$vboptions['privacyurl']"><li><a href="{vb:raw vboptions.privacyurl}">{vb:rawphrase privacy_statement}</a></li></vb:if>
+		<vb:if condition="$vboptions['tosurl']"><li><a href="{vb:raw vboptions.tosurl}">{vb:rawphrase terms_of_service}</a></li></vb:if>
+		<li><a href="{vb:raw relpath}#top" onclick="document.location.hash='top'; return false;">{vb:rawphrase top}</a></li>
+	</ul>
+	
+	
+	<vb:if condition="$show['dst_correction']">
+	<!-- auto DST correction code -->
+		<form action="profile.php?do=dst" method="post" name="dstform">
+			<input type="hidden" name="s" value="{vb:raw session.sessionhash}" />
+			<input type="hidden" name="securitytoken" value="{vb:raw bbuserinfo.securitytoken}" />
+			<input type="hidden" name="do" value="dst" />
+		</form>
+		<script type="text/javascript">
+		<!--
+			var tzOffset = {vb:raw bbuserinfo.timezoneoffset} + {vb:raw bbuserinfo.dstonoff};
+			var utcOffset = new Date().getTimezoneOffset() / 60;
+			if (Math.abs(tzOffset + utcOffset) == 1)
+			{	// Dst offset is 1 so its changed
+				document.forms.dstform.submit();
+			}
+		//-->
+		</script>
+		<!-- / auto DST correction code -->
+	</vb:if>
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+]]></template>
+		<template name="vbulletin.css" templatetype="template" date="1261893748" username="ThangKho" version="4.0.0"><![CDATA[@charset "UTF-8";
+/* CSS Document */
+
+/*THIS*/
+
+html {
+	background:{vb:stylevar doc_background};
+}
+
+/* REVERSE SOME YUI RESET STUFF */
+em {}
+strong {}
+
+/* BASIC PAGE ELEMENTS */
+
+body {
+	width:{vb:stylevar doc_width};
+	min-width:{vb:stylevar doc_minWidth};
+	max-width:{vb:stylevar doc_maxWidth};
+	margin: {vb:stylevar doc_margin};
+	font-size:{vb:stylevar font.fontSize}px;
+	color:{vb:stylevar body_color};
+	background: {vb:stylevar body_background};
+	line-height:{vb:stylevar line_height};
+}
+
+body a {
+	color:{vb:stylevar link_color};
+	text-decoration:{vb:stylevar link_textDecoration};
+}
+body a:hover,
+body a:hover .time,
+body a:hover .shade,
+body a:hover .understate {
+	color:{vb:stylevar linkhover_color};
+	text-decoration:{vb:stylevar linkhover_textDecoration};
+}
+
+body a.understate,
+body a .understate {
+	color:inherit;
+	text-decoration:none;
+	*clear:expression(style.color = parentNode.currentStyle.color, style.clear = "none", 0);
+}
+
+.body_wrapper {
+	padding: 0 {vb:math 2 * {vb:stylevar padding}} {vb:math {vb:stylevar padding}*2};
+	background: {vb:stylevar body_background};
+	-moz-border-radius: {vb:stylevar border_radius};
+	-webkit-border-radius: {vb:stylevar border_radius};
+	_display: inline;
+}
+
+input,
+textarea,
+button,
+select {
+	font-family:{vb:stylevar control_font.fontFamily};
+}
+
+.button {
+	padding: {vb:math {vb:stylevar padding}/4} {vb:math {vb:stylevar padding}/2};
+	font: {vb:stylevar control_font};
+	border:{vb:stylevar button_control_border};
+	/*border-bottom: 1px solid #e0e0e0;*/
+	color:{vb:stylevar control_color};
+	background:{vb:stylevar control_background};
+	-moz-border-radius:{vb:stylevar popupmenu_border_radius};
+	-webkit-border-radius:{vb:stylevar popupmenu_border_radius};
+}
+
+.button:hover {
+	background: {vb:stylevar control_hover_background};
+	color: {vb:stylevar control_color};
+}
+/*
+.button[type="reset"]:hover {
+	background: {vb:stylevar control_hover_background};
+	color: {vb:stylevar control_color};
+}
+*/
+body,
+legend {
+	font-family:{vb:stylevar font.fontFamily};
+}
+
+.shade {
+	color:{vb:stylevar shade_color};
+}
+
+.time {
+	color:{vb:stylevar time_color};
+}
+
+.nocss_label {
+	display:none;
+}
+
+.normal {
+	font-size:{vb:stylevar font.fontSize}px;
+	font-weight:normal;
+}
+
+/* BLOCK STUFF */
+
+.block {
+	background:{vb:stylevar block_background};
+	border:{vb:stylevar block_border};
+	clear:both;
+	padding:{vb:stylevar block_padding};
+	color:{vb:stylevar block_color};
+	font:{vb:stylevar block_font};
+	/*margin-bottom:20px;*/
+}
+
+.blockhead a { color:{vb:stylevar block_link_color}; }
+.blockhead a:hover { color:{vb:stylevar block_linkhover_color}; }
+
+.blockhead {
+	font:{vb:stylevar blockhead_font};
+	color:{vb:stylevar blockhead_color};
+	background:{vb:stylevar blockhead_background};
+	_background-image: none;
+	padding:{vb:stylevar blockhead_padding};
+	border:{vb:stylevar blockhead_border};
+	-moz-border-radius-top{vb:stylevar right}: {vb:stylevar border_radius};
+	-moz-border-radius-top{vb:stylevar left}: {vb:stylevar border_radius};
+	-webkit-border-top-{vb:stylevar right}-radius: {vb:stylevar border_radius};
+	-webkit-border-top-{vb:stylevar left}-radius: {vb:stylevar border_radius};
+}
+
+.blockhead h2 {
+	font-weight:bold;
+}
+
+.blockhead a { color:{vb:stylevar blockhead_link_color}; }
+.blockhead a:hover { color:{vb:stylevar blockhead_linkhover_color}; }
+
+.blockhead img {
+	margin-bottom: -{vb:stylevar blockhead_padding.paddingBottom}{vb:stylevar blockhead_padding.units};
+}
+
+.blocksubhead {
+	font:{vb:stylevar blocksubhead_font};
+	color:{vb:stylevar blocksubhead_color};
+	background:{vb:stylevar blocksubhead_background};
+	padding:{vb:stylevar blocksubhead_padding};
+	border-top:{vb:stylevar blocksubhead_border};
+	margin: 0 1px;
+}
+
+.blocksubhead img {
+	vertical-align:middle;
+}
+
+/*dl.blocksubhead dt, dl.blocksubhead dd {
+	display:inline;
+}
+dl.blocksubhead dt { color:{vb:stylevar shade_color}; font-weight:normal; }*/
+.blocksubhead a { color:{vb:stylevar blocksubhead_link_color}; text-decoration:none; }
+.blocksubhead a:hover { color:{vb:stylevar blocksubhead_linkhover_color}; }
+
+.blockhead_info, .blocksubhead_info {
+	float:{vb:stylevar right};
+	font-weight:normal;
+}
+
+/*.blockhead + */.blockbody { /* not sure why I had this .blockhead + .blockbody selector... need to look out for breakage */
+	background:{vb:stylevar blockbody_background};
+	padding-{vb:stylevar left}:{vb:stylevar blockbody_padding.paddingLeft}px;
+	padding-{vb:stylevar right}:{vb:stylevar blockbody_padding.paddingRight}px;
+}
+
+.blockrow {
+	background:{vb:stylevar blockrow_background};
+	padding:{vb:stylevar blockrow_padding};
+	border:{vb:stylevar blockrow_border};
+	color:{vb:stylevar blockrow_color};
+	font:{vb:stylevar blockrow_font};
+}
+.blockrow a { color:{vb:stylevar blockrow_link_color}; }
+.blockrow a:hover { color:{vb:stylevar blockrow_linkhover_color}; }
+
+.blockfoot, .blocksubfoot {
+	display:block;
+	clear:both;
+	background:{vb:stylevar blockfoot_background};
+	padding:{vb:stylevar blockfoot_padding};
+	border:{vb:stylevar blockfoot_border};
+	color:{vb:stylevar blockfoot_color};
+	font:{vb:stylevar blockfoot_font};
+
+}
+.blockfoot a { color:{vb:stylevar blockfoot_link_color}; }
+.blockfoot a:hover { color:{vb:stylevar blockfoot_linkhover_color}; }
+
+.blockfoot,
+.blocksubfoot {
+	padding:{vb:stylevar blockfoot_padding};
+}
+
+.blocksubfoot {
+	text-align:{vb:stylevar right};
+}
+/* END BLOCK STUFF */
+
+/* WYSIWYG */
+.wysiwyg_block {
+	border: {vb:stylevar mid_border};
+	border-top: 1px solid {vb:stylevar blockbody_background.backgroundColor};
+	margin-bottom: {vb:stylevar padding};
+}
+
+.wysiwyg_block .blockrow:first-child {
+	background: transparent url({vb:stylevar imgdir_gradients}/gradient-greytowhite.png) repeat-x top left;
+}
+
+.wysiwyg_block iframe.textbox {
+	border: {vb:stylevar mid_border};
+	background: {vb:stylevar wysiwyg_textbox_background};
+	padding-bottom: 0;
+}
+
+.wysiwyg_block .formcontrols .blockrow {
+	border-top: 0;
+}
+
+.wysiwyg {
+	font: {vb:stylevar font};
+}
+
+/* CSS TABLE STUFF */
+.table { display:table; table-layout:fixed; }
+.thead { width:100%; padding:0; }
+.tr    { display:table-row; }
+.td    { display:table-cell; }
+
+/* POPUPS */
+
+.popupgroup {}
+
+.popupmenu {
+	*z-index:999;
+	position: relative;
+}
+
+.popupmenu a.popupctrl {
+	background-image:url({vb:stylevar imgdir_misc}/black_downward_arrow.png);
+	background-position:{vb:stylevar right} center;
+	background-repeat:no-repeat;
+	padding-{vb:stylevar right}:15px;
+	_padding-{vb:stylevar right}:25px;
+}
+
+.popupmenu a.popupctrl.nogadget {
+	padding-{vb:stylevar right}:0;
+	background-image:none;
+}
+
+.popupgroup .popupmenu a.popupctrl {
+	font-size:{vb:stylevar small_fontSize};
+	padding:2px 4px;
+	border:solid {vb:stylevar lightweightbox_border.borderWidth}px transparent;
+	background-color:transparent;
+	text-decoration:none;
+	padding-{vb:stylevar right}:15px;
+	margin-{vb:stylevar left}:{vb:math {vb:stylevar padding}/2};
+}
+
+.popupgroup .popupmenu:hover a.popupctrl {
+	border-color:{vb:stylevar lightweightbox_border.borderWidth};
+	background-color:transparent;
+}
+
+/* see PopupMenu.set_control_style() */
+.popupgroup .popupmenu:hover a.popupctrl.active,
+.popupmenu a.popupctrl.active {
+	border-color:{vb:stylevar lightweightbox_border.borderWidth};
+	background-color:transparent;
+	color:{vb:stylevar body_color};
+}
+
+.popupgroup .popupmenu {
+	float:{vb:stylevar left};
+}
+
+.blockfoot .popupctrl {
+	text-decoration:none;
+	padding:2px 6px;
+	padding-{vb:stylevar right}:15px;
+	-moz-border-radius:{vb:stylevar popupmenu_border_radius};
+	-webkit-border-radius:{vb:stylevar popupmenu_border_radius};
+}
+
+.blockhead .popupctrl {
+color: {vb:stylevar blockhead_link_color};
+}
+
+.blockhead .popupctrl:hover {
+color: {vb:stylevar blockhead_linkhover_color};
+}
+/* PAGINATION LINKS */
+
+.pagination dt,
+.pagination dd  {
+	display:inline;
+	font:{vb:stylevar pagination_font};
+}
+.pagination dd span, .pagination dt span {
+	margin-{vb:stylevar left}: 1px;
+}
+.pagination span {
+	display: block;
+	float: {vb:stylevar left};
+	clear: {vb:stylevar right};
+	border: {vb:stylevar pagination_border};
+}
+
+.pagination span a {
+	font:{vb:stylevar pagination_font};
+	border-top: {vb:stylevar pagination_span_border_top};
+	display: block;
+	float: {vb:stylevar left};
+	clear: {vb:stylevar right};
+	padding: 2px 4px;
+	background:{vb:stylevar pagination_background};
+	text-decoration:none;
+	color: {vb:stylevar pagination_color};
+}
+
+.pagination span:hover {
+	border: {vb:stylevar pagination_hover_border};
+}
+
+.pagination span.prev_next, pagination span.first_last {
+	
+}
+
+.pagination span.prev_next a, .pagination span.first_last a {
+	height: {vb:math {vb:stylevar pagination_font.fontSize}{vb:stylevar pagination_font.units}*{vb:stylevar line_height}};
+	padding-top: 0;
+	padding-bottom: 5px;
+}
+
+.pagination span.prev_next img, .pagination span.first_last img {
+	position: relative;
+	display: inline;
+	top: 3px;
+}
+.pagination dt.label {
+	display:none;
+}
+
+.pagination dt a:hover,
+.pagination dd a:hover
+{
+	text-decoration:none;
+}
+
+.pagination dd a.selected {
+	background: {vb:stylevar pagination_current_background};
+	color: {vb:stylevar pagination_current_color};
+	border: {vb:stylevar pagination_current_border};
+	font-weight:bold;
+	display: block;
+	float: {vb:stylevar left};
+	clear: {vb:stylevar right};
+	padding: {vb:math 2px + {vb:stylevar pagination_span_border_top.borderWidth}} 4px 2px;
+	margin-{vb:stylevar left}: 1px;
+}
+
+.pagination .separator,
+.pagination .elipsis {
+	float: {vb:stylevar left};
+	clear: {vb:stylevar right};
+	background: none;
+	border: 0;
+}
+
+.pagination .separator:hover {
+	border: 0;
+}
+
+.pagination li.jumptopage {
+	text-align:center;
+	/*line-height:4em;*/
+}
+
+
+.pagination dt span a.popupctrl {
+	background: transparent url({vb:stylevar imgdir_misc}/black_downward_arrow.png) no-repeat center {vb:stylevar left};
+	padding-{vb:stylevar right}: 4px;
+	padding-{vb:stylevar left}: 18px;
+}
+
+.pagination .popupmenu:hover a.popupctrl {
+	border: {vb:stylevar pagination_hover_border};
+	color: {vb:stylevar body_color};
+}
+
+
+/* TEXT CONTROLS */
+
+.textcontrols a,
+a.textcontrol {
+	position:relative;
+	padding: 3px {vb:math {vb:stylevar padding}/2};
+	/*padding-{vb:stylevar left}:35px;*/
+	font: {vb:stylevar control_font};
+	line-height: {vb:stylevar line_height};
+	text-decoration:none;
+	border: {vb:stylevar control_border};
+	color: {vb:stylevar control_color};
+	background:{vb:stylevar control_background};
+	-moz-border-radius:{vb:stylevar popupmenu_border_radius};
+	-webkit-border-radius:{vb:stylevar popupmenu_border_radius};
+}
+
+.textcontrols a img,
+a.textcontrol img {
+	position:absolute;
+	bottom:2px;
+	{vb:stylevar left}:-2px;
+}
+
+.textcontrols a:hover img,
+a:hover.textcontrol img {
+	position: absolute;
+	bottom:2px;
+	{vb:stylevar left}:-2px;
+}
+
+.textcontrols a:hover,
+/*.actionbutton_container a:hover.pagetitleinfo.textcontrol, 
+a:hover.textcontrol */{
+	background:{vb:stylevar control_hover_background};
+	text-decoration:none;
+	color: {vb:stylevar control_hover_color};
+}
+
+.textcontrols a:hover,
+.actionbutton_container a:hover.pagetitleinfo.textcontrol, 
+a:hover.textcontrol {
+	text-decoration:none;
+}
+
+.blockhead a.textcontrol {
+	float:{vb:stylevar right};
+	font:{vb:stylevar control_font};
+	margin-top: -{vb:math {vb:math {vb:math {vb:stylevar control_font.fontSize} + {vb:math 3px*2} + {vb:math {vb:stylevar control_border.borderWidth}*2}} - {vb:math {vb:stylevar blockhead_font.fontsize} + {vb:stylevar blockhead_padding.paddingTop}{vb:stylevar blockhead_padding.units} + {vb:stylevar blockhead_padding.paddingBottom}{vb:stylevar blockhead_padding.units}+{vb:math {vb:stylevar blockhead_border.borderWidth}*2}}}/2};
+	text-transform: none;
+}
+
+.blockfoot a.textcontrol, .blocksubfoot a.textcontrol {
+	margin-top: {vb:stylevar padding};
+}
+
+/* FORUMJUMP (navpopup) */
+
+.navpopupmenu {
+	text-align:{vb:stylevar right};
+	padding:{vb:stylevar padding} 0;
+	float: {vb:stylevar right};
+}
+
+.navpopupmenu .popupctrl {
+	text-decoration:none;
+	padding:2px 6px;
+	padding-{vb:stylevar right}:15px;
+	-moz-border-radius:{vb:stylevar popupmenu_border_radius};
+	-webkit-border-radius:{vb:stylevar popupmenu_border_radius};
+}
+
+.navpopupmenu .popupctrl .ctrlcontainer {
+	background: transparent url({vb:stylevar imgdir_misc}/black_downward_arrow.png) no-repeat center {vb:stylevar left};
+	padding-{vb:stylevar left}: 15px;
+}
+
+.navpopupbody {
+	width:auto;
+	max-height:350px;
+	text-align:{vb:stylevar left};
+	*overflow:auto;
+	overflow-y:scroll;
+	{vb:stylevar left}:auto;
+	{vb:stylevar right}:0;
+}
+
+.navpopupbody li {
+	overflow:hidden;
+}
+
+.navpopupbody li.optionlabel {
+	text-align:center;
+	font-weight:bold;
+}
+
+/**
+* Not pretty, but it works...
+*/
+.navpopupbody .d1  a, option.d1  { text-indent:{vb:math 1  * {vb:stylevar padding} * 2}; }
+.navpopupbody .d2  a, option.d2  { text-indent:{vb:math 2  * {vb:stylevar padding} * 2}; }
+.navpopupbody .d3  a, option.d3  { text-indent:{vb:math 3  * {vb:stylevar padding} * 2}; }
+.navpopupbody .d4  a, option.d4  { text-indent:{vb:math 4  * {vb:stylevar padding} * 2}; }
+.navpopupbody .d5  a, option.d5  { text-indent:{vb:math 5  * {vb:stylevar padding} * 2}; }
+.navpopupbody .d6  a, option.d6  { text-indent:{vb:math 6  * {vb:stylevar padding} * 2}; }
+.navpopupbody .d7  a, option.d7  { text-indent:{vb:math 7  * {vb:stylevar padding} * 2}; }
+.navpopupbody .d8  a, option.d8  { text-indent:{vb:math 8  * {vb:stylevar padding} * 2}; }
+.navpopupbody .d9  a, option.d9  { text-indent:{vb:math 9  * {vb:stylevar padding} * 2}; }
+.navpopupbody .d10 a, option.d10 { text-indent:{vb:math 10 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d11 a, option.d11 { text-indent:{vb:math 11 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d12 a, option.d12 { text-indent:{vb:math 12 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d13 a, option.d13 { text-indent:{vb:math 13 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d14 a, option.d14 { text-indent:{vb:math 14 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d15 a, option.d15 { text-indent:{vb:math 15 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d16 a, option.d16 { text-indent:{vb:math 16 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d17 a, option.d17 { text-indent:{vb:math 17 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d18 a, option.d18 { text-indent:{vb:math 18 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d19 a, option.d19 { text-indent:{vb:math 19 * {vb:stylevar padding} * 2}; }
+.navpopupbody .d20 a, option.d20 { text-indent:{vb:math 20 * {vb:stylevar padding} * 2}; }
+
+/* LEFT / RIGHT DT+DD */
+
+dl.stats.totals {
+	float:{vb:stylevar right};
+	padding:{vb:stylevar padding};
+}
+
+dl.stats dt {
+	display:inline;
+	color:{vb:stylevar shade_color};
+}
+dl.stats dt:after {
+	content:":";
+}
+dl.stats dd {
+	display:inline;
+}
+
+/* BLOCK STATS */
+dl.statsblock dt {
+	display:block;
+	float:{vb:stylevar left};
+	clear:{vb:stylevar left};
+	width:25%;
+}
+
+dl.statsblock dd {
+	display:block;
+	float:{vb:stylevar left};
+	margin-{vb:stylevar left}:{vb:stylevar padding};
+}
+
+/* LIGHT-TABS */
+
+dl.tabslight {
+	border-bottom:solid {vb:stylevar tabslight_border.borderWidth}px {vb:stylevar mid_border.borderColor};
+	padding-{vb:stylevar left}:{vb:math {vb:stylevar padding} * 2};
+	margin-bottom:1em;
+	height:{vb:math {vb:stylevar tabslight_size.height} + {vb:stylevar tabslight_border.borderWidth}}px;
+	margin-top:{vb:math {vb:stylevar padding}*1.5};
+}
+
+dl.tabslight dt {
+	display:none;
+}
+
+dl.tabslight dd {
+	float:{vb:stylevar left};
+}
+
+dl.tabslight dd a {
+	font-size:{vb:stylevar small_fontSize};
+	font-weight:bold;
+	color:{vb:stylevar body_color};
+	text-decoration:none;
+	text-align:center;
+
+	padding:0 {vb:stylevar padding};
+	min-width:{vb:stylevar tabslight_size.width};
+	height:{vb:stylevar tabslight_size.height};
+	line-height:{vb:stylevar tabslight_size.height}px;
+	display:block;
+
+	border:{vb:stylevar tabslight_border};
+	background-color:{vb:stylevar blocksubhead_background.backgroundColor};
+
+	margin-{vb:stylevar left}:-{vb:stylevar tabslight_border.borderWidth}{vb:stylevar tabslight_border.unit};
+	margin-bottom:-{vb:stylevar tabslight_border.borderWidth}{vb:stylevar tabslight_border.unit};
+
+	-moz-border-radius-top{vb:stylevar left}:5px;
+	-moz-border-radius-top{vb:stylevar right}:11px;
+	-webkit-border-top-{vb:stylevar left}-radius:3px;
+	-webkit-border-top-{vb:stylevar right}-radius:11px;
+}
+
+dl.tabslight dd.selected a,
+dl.tabslight dd.selected a:hover {
+	position:relative;
+	border-bottom: {vb:stylevar tabslight_border.borderWidth}{vb:stylevar tabslight_border.units} {vb:stylevar tabslight_border.borderStyle} transparent;
+	background:{vb:stylevar tabslight_selected_background};
+}
+
+dl.tabslight dd a:hover {
+	color:{vb:stylevar linkhover_color};
+	background:{vb:stylevar navbar_tab_selected_background.backgroundColor} {vb:stylevar navbar_tab_selected_background.backgroundImage} repeat-x 0 -{vb:stylevar navbar_tab_selected_top_width}px;
+}
+
+/* COLUMN SORT LINKS */
+
+.columnsort a,
+.columnsort span {
+	display:block;
+	text-decoration:none;
+	white-space:nowrap;
+	text-align: {vb:stylevar left};
+}
+
+.columnsort a:hover {
+	background-color:{vb:stylevar imodhilite_backgroundColor};
+	text-decoration:none;
+	color:inherit;
+}
+
+tr.columnsort th {
+	white-space:nowrap;
+}
+
+/* MISC */
+
+div.collapse {
+	position:relative;
+}
+
+a.collapse {
+	float:{vb:stylevar right};
+	{vb:stylevar right}:{vb:stylevar padding};
+	top:{vb:math {vb:stylevar padding}*2};
+	position:absolute;
+}
+
+.blockhead a.collapse {
+	top: {vb:stylevar padding};
+}
+
+#forumrules {
+	margin-bottom: {vb:stylevar padding};
+	border-bottom: {vb:stylevar foruminfo_border};
+	border-{vb:stylevar left}: {vb:stylevar foruminfo_border};
+	border-{vb:stylevar right}: {vb:stylevar foruminfo_border};
+	border-top: 1px solid {vb:stylevar foruminfo_background.backgroundColor};
+	background: {vb:stylevar foruminfo_background};
+	-moz-box-shadow: -2px 0 2px {vb:stylevar shadow_color};
+	-webkit-box-shadow: -2px 0 2px {vb:stylevar shadow_color};
+}
+
+#forumrules ul.youcandoblock {
+	float:{vb:stylevar left};
+	width:55%;
+	margin-bottom: {vb:stylevar padding};
+	overflow:hidden;
+}
+
+#forumrules ul.bbcodeblock {
+	float:{vb:stylevar right};
+	width:42%;
+	text-align:{vb:stylevar right};
+	overflow:hidden;
+}
+
+#forumrules .rules_link {
+	margin-top: {vb:stylevar padding};
+	width: 42%;
+	padding-{vb:stylevar left}: 55%;
+}
+
+.errorblock ul.blockrow.error > li {
+	border-bottom:solid 1px {vb:stylevar light_border.borderColor};
+	padding-bottom:{vb:stylevar padding};
+	margin-bottom:{vb:stylevar padding};
+}
+
+.errorblock ul.blockrow.error li:last-child {
+	border-bottom:none;
+	padding-bottom:0;
+	margin-bottom:0;
+}
+
+blockquote.preview {
+	font-family:{vb:stylevar content_font.fontFamily};
+}
+
+blockquote.preview .bbcode_container div.bbcode_code,
+blockquote.preview .bbcode_container pre.bbcode_code {
+	margin:0;
+	padding:6px;
+	border:1px inset;
+	text-align:{vb:stylevar left};
+	overflow:auto;
+	direction:ltr;
+	background:{vb:stylevar content3_background.backgroundColor} {vb:stylevar content3_background.backgroundImage} repeat-x;
+	/*height:{vb:stylevar bbcode_codeheight};*/
+	font-size:12px;
+}
+
+blockquote.preview .bbcode_container code.bbcode_code {
+	margin:0;
+	text-align:{vb:stylevar left};
+	direction:ltr;
+	font-size:12px;
+}
+
+blockquote.preview .bbcode_container code.bbcode_code code {
+	white-space:nowrap;
+}
+
+blockquote.preview fieldset.postattachlist {
+	background:{vb:stylevar formrow_background.backgroundColor} {vb:stylevar formrow_background.backgroundImage} bottom repeat-x;
+	border-top:solid 1px {vb:stylevar light_border.borderColor};
+	padding-bottom:1em;
+}
+
+blockquote.preview .bbcode_container div.bbcode_quote {
+	margin:0 {vb:stylevar padding};
+	margin-bottom: {vb:stylevar padding};
+	-moz-border-radius: {vb:stylevar border_radius};
+	-webkit-border-radius: {vb:stylevar border_radius};
+	background: {vb:stylevar bbcode_quote_background};
+	border-radius: {vb:stylevar border_radius};
+	border: {vb:stylevar bbcode_quote_border};
+	font: {vb:stylevar bbcode_quote_font};
+	position: relative;
+	top: 0;
+}
+
+
+blockquote.preview .bbcode_container .bbcode_quote_container {
+	background: transparent url({vb:stylevar imgdir_misc}/quote-{vb:stylevar left}.png) no-repeat {vb:stylevar top} {vb:stylevar left};
+	display:block;
+	width: 9px;
+	height: 13px;
+	position: absolute;
+	top: 5;
+	{vb:stylevar left}: -9px;
+}
+
+blockquote.preview .bbcode_quote div.quote_container {
+	border-top: 1px solid {vb:stylevar postbit_background.backgroundColor};
+	-moz-border-radius: {vb:stylevar border_radius};
+	-webkit-border-radius: {vb:stylevar border_radius};
+	padding: {vb:stylevar bbcode_quote_padding};
+}
+
+.attachments {
+	border: {vb:stylevar postbit_boxed_border};
+	background: {vb:stylevar postbit_boxed_background};
+	margin: 20px {vb:math {vb:stylevar bbcode_quote_padding.paddingLeft}+20px};
+	-moz-border-radius: {vb:stylevar border_radius};
+	padding: {vb:stylevar postbit_boxed_padding};
+	font-size: {vb:stylevar postbit_boxed_fontSize};
+}
+
+.attachments fieldset {
+	margin: {vb:stylevar bbcode_quote_padding.paddingTop}{vb:stylevar bbcode_quote_padding.units} 0;
+}
+
+.attachments img.inlineimg {
+	position: relative;
+	top: 2px;
+}
+
+
+blockquote.preview p.signature {
+	margin-top:1.5em;
+	border-top:solid 1px {vb:stylevar shade_deep_color};
+	padding-top:0.5em;
+}
+
+.commalist li {
+	display:inline;
+}
+
+.commalist li:after {
+	content:",";
+}
+
+.commalist li:last-child:after {
+	content:"";
+}
+
+ul.username li a,
+ol.username li a,
+a.username {}
+
+.standard_error {
+	max-width:600px;
+	margin:0 auto;
+	padding:4em 0 6em;
+}
+
+a.extlink {
+	width:10px;
+	height:10px;
+	text-indent:-9999px;
+	position:absolute;
+	margin-{vb:stylevar left}:2px;
+	background:{vb:stylevar a_extlink};
+}
+
+.hidden {
+	display:none;
+}
+
+/* Auto-clearing of floats */
+.floatcontainer:after,
+.formcontrols .blockrow:after,
+dl.stats:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.floatcontainer,
+.formcontrols .blockrow,
+dl.stats {
+	display:inline-block;
+	font-weight:normal;
+}
+/* IE-Mac hide \*/
+* html .floatcontainer,
+.formcontrols .blockrow,
+dl.stats {
+	height:1%;
+}
+.floatcontainer,
+.formcontrols .blockrow,
+dl.stats {
+	display:block;
+}
+/* End IE-Mac hide */
+
+
+/* INLINEMOD */
+
+#inlinemod_formctrls {
+	float:{vb:stylevar right};
+}
+
+#inlinemod_formctrls .popupctrl {
+	text-decoration:none;
+	background: {vb:stylevar control_background};
+	padding-{vb:stylevar right}: 0;
+	color: {vb:stylevar control_color};
+	border: {vb:stylevar control_border};
+	font: {vb:stylevar control_font};
+	float: {vb:stylevar left};
+	-moz-border-radius:{vb:stylevar popupmenu_border_radius};
+	-webkit-border-radius:{vb:stylevar popupmenu_border_radius};
+}
+
+#inlinemod_formctrls a.popupctrl:hover {
+	background: {vb:stylevar control_hover_background};
+	color: {vb:stylevar control_hover_color};
+}
+
+#inlinemod_formctrls a.popupctrl span.ctrlcontainer {
+	display:inline-block;
+	background: transparent url({vb:stylevar imgdir_misc}/black_downward_arrow.png) no-repeat center {vb:stylevar left};
+	padding: {vb:math {vb:stylevar padding}/3} {vb:math {vb:stylevar padding}/2} {vb:math {vb:stylevar padding}/3} 15px;
+	font-size: {vb:stylevar small_fontSize};
+	float: {vb:stylevar left};
+}
+
+#inlinemod_formctrls .popupbody {
+	{vb:stylevar left}:auto;
+	{vb:stylevar right}:0px;
+}
+
+
+/* FORUM DISABLED */
+div.forum_disabled {
+	text-align:center;
+	color:red;
+	background-color:white;
+	padding:{vb:stylevar padding};
+	font-size:20px;
+}
+
+/**
+* UN-RESET
+*
+* These definitions are designed to undo the effects of YUI Reset, but only when contained within a *.reset element.
+* Code is based on YUI Base
+*/
+
+/*
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.7.0
+*/
+/**
+ * YUI Base
+ * @module base
+ * @namespace yui-
+ * @requires reset, fonts
+*/
+
+.restore body {
+	/* For breathing room between content and viewport. */
+	margin:10px;
+}
+
+.restore h1 {
+	/* 18px via YUI Fonts CSS foundation. */
+	font-size: 138.5%;
+}
+
+.restore h2 {
+	/* 16px via YUI Fonts CSS foundation. */
+	font-size: 123.1%;
+}
+
+.restore h3 {
+	/* 14px via YUI Fonts CSS foundation. */
+	font-size: 108%;
+}
+
+.restore h1,
+.restore h2,
+.restore h3 {
+	/* Top & bottom margin based on font size. */
+	margin: 1em 0;
+}
+
+.restore h1,
+.restore h2,
+.restore h3,
+.restore h4,
+.restore h5,
+.restore h6,
+.restore strong,
+.restore dt {
+	/* Bringing boldness back to headers and the strong element. */
+	font-weight: bold;
+}
+.restore optgroup {
+	font-weight:normal;
+}
+
+.restore abbr,
+.restore acronym {
+	/* Indicating to users that more info is available. */
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+.restore em {
+	/* Bringing italics back to the em element. */
+	font-style: italic;
+}
+
+.restore del {
+	/* Striking deleted phrases. */
+	text-decoration: line-through;
+}
+
+.restore blockquote,
+.restore ul,
+.restore ol,
+.restore dl {
+	/* Giving blockquotes and lists room to breath. */
+	margin: 1em;
+}
+
+.restore ol,
+.restore ul,
+.restore dl {
+	/* Bringing lists on to the page with breathing room. */
+	margin-{vb:stylevar left}: 2em;
+}
+
+.restore ol li,
+.restore ol.decimal li {
+	list-style:decimal outside;
+}
+
+.restore ol.upper-roman li {
+	list-style:upper-roman outside;
+}
+
+.restore ol.lower-roman li {
+	list-style:lower-roman outside;
+}
+
+.restore ol.upper-alpha li {
+	list-style:upper-alpha outside;
+}
+
+.restore ol.lower-alpha li {
+	list-style:lower-alpha outside;
+}
+
+.restore ul li {
+	/* Giving UL's LIs generated disc markers. */
+	list-style: disc outside;
+}
+
+.restore dl dd {
+	/* Giving UL's LIs generated numbers. */
+	margin-{vb:stylevar left}: 1em;
+}
+
+.restore th,
+.restore td {
+	/* Borders and padding to make the table readable. */
+	border: {vb:stylevar restore};
+	padding: {vb:stylevar restore_padding};
+}
+
+.restore th {
+	/* Distinguishing table headers from data cells. */
+	font-weight: bold;
+	text-align: center;
+}
+
+.restore caption {
+	/* Coordinated margin to match cell's padding. */
+	margin-bottom: .5em;
+	/* Centered so it doesn't blend in to other content. */
+	text-align: center;
+}
+
+.restore sup {
+	/* to preserve line-height and selector appearance */
+	vertical-align: super;
+}
+
+.restore sub {
+	/* to preserve line-height and selector appearance */
+	vertical-align: sub;
+}
+
+.restore p,
+.restore fieldset,
+.restore table,
+.restore pre {
+	/* So things don't run into each other. */
+	margin-bottom: 1em;
+}
+/* Opera requires 1px of passing to render with contemporary native chrome */
+.restore button,
+.restore input[type="checkbox"],
+.restore input[type="radio"],
+.restore input[type="reset"],
+.restore input[type="submit"] {
+	padding:1px;
+}
+
+
+.unread {
+	font-weight:bold;
+}
+
+/* Cloud tags */
+li.tag {
+	display:inline;
+	margin-{vb:stylevar right}:{vb:math {vb:stylevar padding} / 2}px;
+}
+
+li.tag label.mine {
+	font-weight:bold;
+}
+
+li.tag a {
+	text-decoration:none;
+}
+
+li.taglevel1 {
+	font-size:xx-small;
+}
+
+li.taglevel2 {
+	font-size:small;
+}
+
+li.taglevel3 {
+	font-size:medium;
+}
+
+li.taglevel4,
+li.taglevel5 {
+	font-size:large;
+}
+
+li.taglevel5 {
+	font-weight:bold;
+}
+
+li.tag.option {
+	padding:{vb:stylevar padding};
+}
+
+/* Tag Controls */
+/* Tagging Controls */
+
+#thread_tags_list input#tag_add_input {
+	display:block;
+	width:90%;
+	margin-top:2px;
+	margin-bottom:0.5em;
+}
+
+#thread_tags_list  .description {
+	color:{vb:stylevar shade_color};
+}
+
+#thread_tags_list  .actionbuttons {
+	text-align:{vb:stylevar right};
+	margin-bottom:1em;
+}
+
+#tag_edit_list {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+#tag_edit_list li {
+	float:{vb:stylevar left};
+	display:block;
+	width:100px;
+}
+
+#tag_edit_list li.mine {
+	font-weight:bold;
+}
+
+/* We don't use class="inlineimg" in vB4
+img.inlineimg {
+	padding:0 {vb:stylevar padding};
+}
+*/
+
+
+/* Social Bookmarks */
+
+#social_bookmarks_list li {
+	display:block;
+	float:{vb:stylevar left};
+	padding-{vb:stylevar left}:{vb:stylevar padding};
+}
+
+/* Imagereg */
+#imagereg {
+	vertical-align:middle;
+	margin-bottom:{vb:math {vb:stylevar padding}/2};
+}
+
+
+#wol_navpopup.navpopupmenu {
+	margin-bottom:6px;
+}
+.navlinks {
+	background: {vb:stylevar navlinks_background};
+	border-top: {vb:stylevar navlinks_border_top};
+	padding: {vb:stylevar padding} 0;
+	text-align: center;
+	color: {vb:stylevar navlinks_color};
+	font-size: {vb:stylevar font-size};
+        margin-top: 20px;
+        margin-bottom: 20px;
+width:100%;
+clear:both;
+}
+
+.cleardiv {
+	clear:both;
+}
+
+#ajax_post_errors {
+	position:absolute;
+	width:420px;
+	z-index:500;
+	padding:2px;
+	background-color:#FFFFFF;
+	-moz-border-radius-top{vb:stylevar right}:{vb:stylevar border_radius};
+	-moz-border-radius-top{vb:stylevar left}:{vb:stylevar border_radius};
+	-webkit-border-top-{vb:stylevar right}-radius:{vb:stylevar border_radius};
+	-webkit-border-top-{vb:stylevar left}-radius:{vb:stylevar border_radius};
+}
+
+#ajax_post_errors .blockrow {
+	border-bottom:{vb:stylevar forumbits_border};
+	border-{vb:stylevar left}:{vb:stylevar forumbits_border};
+	border-{vb:stylevar right}:{vb:stylevar forumbits_border};
+}
+#ajax_post_errors .blockfoot {
+	text-align:center;
+}
+
+#ajax_post_errors_message ol {
+	margin:1em;
+	margin-{vb:stylevar left}:2em;
+}
+
+#ajax_post_errors_message ol.numeric li,
+#ajax_post_errors_message ol li {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:decimal;
+}
+
+.highlight {
+    background: {vb:stylevar highlight_background};
+}]]></template>
+	</templategroup>
+	<stylevardfns>
+	</stylevardfns>
+	<stylevars>
+		<stylevar name="avatar_height" value="YToyOntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjQ6InNpemUiO3M6MzoiMTUwIjt9" />
+		<stylevar name="bbcode_quote_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTg6InJnYigyMDQsIDI1NSwgMjA0KSI7fQ==" />
+		<stylevar name="blockhead_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxODoicmdiKDI1NSwgMTAyLCAyMDQpIjtzOjU6ImltYWdlIjtzOjM3OiJ1cmwoaW1hZ2VzL2J1dHRvbnMvbmV3YnRuX21pZGRsZS5wbmcpIjtzOjY6InJlcGVhdCI7czo4OiJyZXBlYXQteCI7czoxOiJ4IjtzOjA6IiI7czoxOiJ5IjtzOjA6IiI7fQ==" />
+		<stylevar name="blockhead_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTg6InJnYigyNTUsIDEwMiwgMjA0KSI7fQ==" />
+		<stylevar name="blocksubhead_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxODoicmdiKDI1NSwgMTUzLCAyNTUpIjtzOjU6ImltYWdlIjtzOjUxOiJ1cmwoaW1hZ2VzL2dyYWRpZW50cy9zdWJoZWFkaW5nLWdyYWRpZW50LWFscGhhLnBuZykiO3M6NjoicmVwZWF0IjtzOjg6InJlcGVhdC14IjtzOjE6IngiO3M6MDoiIjtzOjE6InkiO3M6MDoiIjt9" />
+		<stylevar name="blocksubhead_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6NzoiI0ZGRkZGRiI7fQ==" />
+		<stylevar name="control_content_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxODoicmdiKDI1NSwgMTAyLCAyMDQpIjtzOjU6ImltYWdlIjtzOjM3OiJ1cmwoaW1hZ2VzL2J1dHRvbnMvbmV3YnRuX21pZGRsZS5wbmcpIjtzOjY6InJlcGVhdCI7czo4OiJyZXBlYXQteCI7czoxOiJ4IjtzOjQ6ImxlZnQiO3M6MToieSI7czozOiJ0b3AiO30=" />
+		<stylevar name="control_content_hover_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxNzoicmdiKDI1NSwgNTEsIDE1MykiO3M6NToiaW1hZ2UiO3M6Mzc6InVybChpbWFnZXMvYnV0dG9ucy9uZXdidG5fbWlkZGxlLnBuZykiO3M6NjoicmVwZWF0IjtzOjg6InJlcGVhdC14IjtzOjE6IngiO3M6NDoibGVmdCI7czoxOiJ5IjtzOjM6InRvcCI7fQ==" />
+		<stylevar name="doc_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxODoicmdiKDI1NSwgMjA0LCAyNTUpIjtzOjU6ImltYWdlIjtzOjM0OiJ1cmwoaW1hZ2VzL3RlZW4vYmctbWFpbi5qcGcpIGZpeGVkIjtzOjY6InJlcGVhdCI7czowOiIiO3M6MToieCI7czowOiIiO3M6MToieSI7czowOiIiO30=" />
+		<stylevar name="footer_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxNzoicmdiKDI1NSwgNTEsIDE1MykiO3M6NToiaW1hZ2UiO3M6Mjk6InVybChpbWFnZXMvdGVlbi90Zm9vdF9iZy5naWYpIjtzOjY6InJlcGVhdCI7czowOiIiO3M6MToieCI7czowOiIiO3M6MToieSI7czowOiIiO30=" />
+		<stylevar name="footer_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjAiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6NzoiIzAwMDAwMCI7fQ==" />
+		<stylevar name="formrow_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTY6InJnYigyNDksMjQ5LDI0OSkiO30=" />
+		<stylevar name="forumhead_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxNzoicmdiKDI1NSwgNTEsIDE1MykiO3M6NToiaW1hZ2UiO3M6Mjk6InVybChpbWFnZXMvdGVlbi90Zm9vdF9iZy5naWYpIjtzOjY6InJlcGVhdCI7czo4OiJyZXBlYXQteCI7czoxOiJ4IjtzOjA6IiI7czoxOiJ5IjtzOjA6IiI7fQ==" />
+		<stylevar name="forumhead_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTg6InJnYigyNTUsIDEwMiwgMjA0KSI7fQ==" />
+		<stylevar name="foruminfo_header_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxODoicmdiKDI1NSwgMTAyLCAyMDQpIjtzOjU6ImltYWdlIjtzOjM3OiJ1cmwoaW1hZ2VzL2J1dHRvbnMvbmV3YnRuX21pZGRsZS5wbmcpIjtzOjY6InJlcGVhdCI7czo4OiJyZXBlYXQteCI7czoxOiJ4IjtzOjA6IiI7czoxOiJ5IjtzOjA6IiI7fQ==" />
+		<stylevar name="foruminfo_header_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTg6InJnYigyNTUsIDEwMiwgMjA0KSI7fQ==" />
+		<stylevar name="header_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czo3OiIjZmQ0Njk4IjtzOjU6ImltYWdlIjtzOjQ0OiJ1cmwoaW1hZ2VzL2dyYWRpZW50cy9ncmFkaWVudC1ncmV5LWRvd24ucG5nKSI7czo2OiJyZXBlYXQiO3M6ODoicmVwZWF0LXgiO3M6MToieCI7czowOiIiO3M6MToieSI7czowOiIiO30=" />
+		<stylevar name="imodhilite_backgroundColor" value="YToxOntzOjU6ImNvbG9yIjtzOjE4OiJyZ2IoMjA0LCAyNTUsIDIwNCkiO30=" />
+		<stylevar name="input_borderColor" value="YToxOntzOjU6ImNvbG9yIjtzOjE4OiJyZ2IoMjA0LCAyNTUsIDI1NSkiO30=" />
+		<stylevar name="link_color" value="YToxOntzOjU6ImNvbG9yIjtzOjE2OiJyZ2IoMjU1LCAwLCAxNTMpIjt9" />
+		<stylevar name="linkhover_color" value="YToxOntzOjU6ImNvbG9yIjtzOjE2OiJyZ2IoMjU1LCAwLCAxNTMpIjt9" />
+		<stylevar name="linkhover_textDecoration" value="YTo1OntzOjQ6Im5vbmUiO3M6MToiMSI7czo5OiJ1bmRlcmxpbmUiO3M6MToiMCI7czo4OiJvdmVybGluZSI7czoxOiIwIjtzOjEyOiJsaW5lLXRocm91Z2giO3M6MToiMCI7czo1OiJibGluayI7czoxOiIwIjt9" />
+		<stylevar name="mid_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTg6InJnYigyMDQsIDIwNCwgMjA0KSI7fQ==" />
+		<stylevar name="navbar_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxODoicmdiKDI1NSwgMTAyLCAyMDQpIjtzOjU6ImltYWdlIjtzOjA6IiI7czo2OiJyZXBlYXQiO3M6MDoiIjtzOjE6IngiO3M6MDoiIjtzOjE6InkiO3M6MDoiIjt9" />
+		<stylevar name="navbar_background_notify" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxNzoicmdiKDI1NSwgNTEsIDIwNCkiO3M6NToiaW1hZ2UiO3M6MDoiIjtzOjY6InJlcGVhdCI7czowOiIiO3M6MToieCI7czowOiIiO3M6MToieSI7czowOiIiO30=" />
+		<stylevar name="navbar_tab_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxNjoicmdiKDI1NSwgMCwgMTUzKSI7czo1OiJpbWFnZSI7czozNzoidXJsKGltYWdlcy9idXR0b25zL25ld2J0bl9taWRkbGUucG5nKSI7czo2OiJyZXBlYXQiO3M6ODoicmVwZWF0LXgiO3M6MToieCI7czowOiIiO3M6MToieSI7czowOiIiO30=" />
+		<stylevar name="navbar_tab_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjAiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTg6InJnYigyNTUsIDI1NSwgMjU1KSI7fQ==" />
+		<stylevar name="navbar_tab_selected_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxNjoicmdiKDI1NSwgMCwgMTUzKSI7czo1OiJpbWFnZSI7czo2MjoidXJsKGltYWdlcy9ncmFkaWVudHMvc2VsZWN0ZWQtdGFiLWdyYWRpZW50LXdpdGgtdG9wLWFscGhhLnBuZykiO3M6NjoicmVwZWF0IjtzOjg6InJlcGVhdC14IjtzOjE6IngiO3M6MDoiIjtzOjE6InkiO3M6MDoiIjt9" />
+		<stylevar name="navbarsearch_input_borderColor" value="YToxOntzOjU6ImNvbG9yIjtzOjE4OiJyZ2IoMjA0LCAyNTUsIDIwNCkiO30=" />
+		<stylevar name="postbit_control_hover_color" value="YToxOntzOjU6ImNvbG9yIjtzOjE4OiJyZ2IoMTAyLCAxMDIsIDEwMikiO30=" />
+		<stylevar name="postbithead_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxODoicmdiKDI1NSwgMTAyLCAyMDQpIjtzOjU6ImltYWdlIjtzOjI5OiJ1cmwoaW1hZ2VzL3RlZW4vdGhlYWRfYmcuZ2lmKSI7czo2OiJyZXBlYXQiO3M6ODoicmVwZWF0LXgiO3M6MToieCI7czowOiIiO3M6MToieSI7czowOiIiO30=" />
+		<stylevar name="postbithead_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjAiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTg6InJnYigyNTUsIDEwMiwgMjA0KSI7fQ==" />
+		<stylevar name="tabslight_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTg6InJnYigyMDQsIDI1NSwgMjU1KSI7fQ==" />
+		<stylevar name="threadlisthead_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxNzoicmdiKDI1NSwgNTEsIDE1MykiO3M6NToiaW1hZ2UiO3M6Mzc6InVybChpbWFnZXMvYnV0dG9ucy9uZXdidG5fbWlkZGxlLnBuZykiO3M6NjoicmVwZWF0IjtzOjg6InJlcGVhdC14IjtzOjE6IngiO3M6MDoiIjtzOjE6InkiO3M6MDoiIjt9" />
+		<stylevar name="threadlisthead_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTc6InJnYigyNTUsIDUxLCAyMDQpIjt9" />
+		<stylevar name="titleimage" value="YToxOntzOjM6InVybCI7czoxOToiaW1hZ2VzL3RlZW4vYmFuLmpwZyI7fQ==" />
+		<stylevar name="wgoheader_background" value="YTo2OntzOjU6InVuaXRzIjtzOjA6IiI7czo1OiJjb2xvciI7czoxNzoicmdiKDI1NSwgNTEsIDE1MykiO3M6NToiaW1hZ2UiO3M6Mjk6InVybChpbWFnZXMvdGVlbi90Zm9vdF9iZy5naWYpIjtzOjY6InJlcGVhdCI7czo4OiJyZXBlYXQteCI7czoxOiJ4IjtzOjA6IiI7czoxOiJ5IjtzOjA6IiI7fQ==" />
+		<stylevar name="wgoheader_border" value="YTo0OntzOjU6InVuaXRzIjtzOjI6InB4IjtzOjU6IndpZHRoIjtzOjE6IjEiO3M6NToic3R5bGUiO3M6NToic29saWQiO3M6NToiY29sb3IiO3M6MTg6InJnYigyNTUsIDEwMiwgMjU1KSI7fQ==" />
+	</stylevars>
+</style>

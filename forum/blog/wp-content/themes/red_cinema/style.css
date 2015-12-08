@@ -1,0 +1,1774 @@
+/*
+Theme Name: red cinema
+Theme URI: 
+Description: Red Cinema is what it sounds like, a red theme that is inspired by cinemas.
+Version: 1.0
+Author: Jesper
+Author URI: http://jesperholmstrom.se
+Tags: fixed width, fixed-width, three columns, two-columns, valid XHTML, widgets
+*/
+
+body
+{
+	margin: 0 auto;
+	padding: 0;
+	background-color: #000000;
+}
+
+#main
+{
+	position: relative;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+#page-background-glare
+{
+	position: absolute;
+	width: 100%;
+	height: 351px;
+	left: 0;
+	top: 0;
+}
+
+#page-background-glare-image
+{
+	background-image: url('images/Page-BgGlare.png');
+	background-repeat: no-repeat;
+	height: 351px;
+	width: 350px;
+	margin: 0;
+}
+
+html:first-child #page-background-glare
+{
+	border: 1px solid transparent; /* Opera fix */
+}
+
+
+
+
+#page-background-simple-gradient
+{
+	position: absolute;
+	background-image: url('images/Page-BgSimpleGradient.jpg');
+	background-repeat: repeat-x;
+	top:0;
+	width: 100%;
+	height: 1px;
+}
+
+.cleared
+{
+	float: none;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-size:1px;
+}
+
+
+form
+{
+	padding:0 !important;
+	margin:0 !important;
+}
+
+table.position
+{
+	position: relative;
+	width: 100%;
+	table-layout: fixed;
+}
+/* end Page */
+
+/* begin Box, Sheet */
+.Sheet
+{
+	position:relative;
+	z-index:0;
+	margin:0 auto;
+	width: 900px;
+	min-width:23px;
+	min-height:23px;
+}
+
+.Sheet-body
+{
+	position: relative;
+	z-index: 1;
+	padding: 8px;
+}
+
+.Sheet-tr, .Sheet-tl, .Sheet-br, .Sheet-bl, .Sheet-tc, .Sheet-bc,.Sheet-cr, .Sheet-cl
+{
+	position:absolute;
+	z-index:-1;
+}
+
+.Sheet-tr, .Sheet-tl, .Sheet-br, .Sheet-bl
+{
+	width: 22px;
+	height: 22px;
+	background-image: url('images/Sheet-s.png');
+}
+
+.Sheet-tl
+{
+	top:0;
+	left:0;
+	clip: rect(auto, 11px, 11px, auto);
+}
+
+.Sheet-tr
+{
+	top: 0;
+	right: 0;
+	clip: rect(auto, auto, 11px, 11px);
+}
+
+.Sheet-bl
+{
+	bottom: 0;
+	left: 0;
+	clip: rect(11px, 11px, auto, auto);
+}
+
+.Sheet-br
+{
+	bottom: 0;
+	right: 0;
+	clip: rect(11px, auto, auto, 11px);
+}
+
+.Sheet-tc, .Sheet-bc
+{
+	left: 11px;
+	right: 11px;
+	height: 22px;
+	background-image: url('images/Sheet-h.png');
+}
+
+.Sheet-tc
+{
+	top: 0;
+	clip: rect(auto, auto, 11px, auto);
+}
+
+.Sheet-bc
+{
+	bottom: 0;
+	clip: rect(11px, auto, auto, auto);
+}
+
+.Sheet-cr, .Sheet-cl
+{
+	top: 11px;
+	bottom: 11px;
+	width: 22px;
+	background-image: url('images/Sheet-v.png');
+}
+
+.Sheet-cr
+{
+	right:0;
+	clip: rect(auto, auto, auto, 11px);
+}
+
+.Sheet-cl
+{
+	left:0;
+	clip: rect(auto, 11px, auto, auto);
+}
+
+.Sheet-cc
+{
+	position:absolute;
+	z-index:-1;
+	top: 11px;
+	left: 11px;
+	right: 11px;
+	bottom: 11px;
+	background-color: #F5F5F5;
+}
+
+
+.Sheet
+{
+	margin-top: 30px !important;
+}
+
+#page-background-simple-gradient, #page-background-gradient, #page-background-glare
+{
+	min-width:900px;
+}
+
+/* end Box, Sheet */
+
+/* begin Header */
+div.Header
+{
+	margin: 0 auto;
+	position: relative;
+	z-index:0;
+	width: 884px;
+	height: 250px;
+}
+
+div.Header-png
+{
+	position: absolute;
+	z-index:-2;
+	top: 0;
+	left: 0;
+	width: 884px;
+	height: 250px;
+	background-image: url('images/Header.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+div.Header-jpeg
+{
+	position: absolute;
+	z-index:-1;
+	top: 0;
+	left: 0;
+	width: 884px;
+	height: 250px;
+	background-image: url('images/Header.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+/* end Header */
+
+/* begin Logo */
+.Logo
+{
+	display : block;
+	position: absolute;
+	left: 4px;
+	top: 78px;
+	width: 880px;
+}
+
+h1.Logo-name
+{
+	display: block;
+	text-align: center;
+}
+
+h1.Logo-name, h1.Logo-name a, h1.Logo-name a:link, h1.Logo-name a:visited, h1.Logo-name a:hover
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+font-size: 47px;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+font-variant: small-caps;
+	padding:0;
+	margin:0;
+	color: #FFFFFF !important;
+}
+
+.Logo-text
+{
+	display: block;
+	text-align: center;
+}
+
+.Logo-text, .Logo-text a
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 18px;
+font-style: normal;
+font-weight: bold;
+text-transform: uppercase;
+	padding:0;
+	margin:0;
+	color: #F2F2F2 !important;
+}
+/* end Logo */
+
+/* begin Menu */
+/* menu structure */
+
+.menu a, .menu a:link, .menu a:visited, .menu a:hover
+{
+	text-align:left;
+	text-decoration:none;
+	outline:none;
+	letter-spacing:normal;
+	word-spacing:normal;
+}
+
+.menu, .menu ul
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style-type: none;
+	display: block;
+}
+
+.menu li
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	display: block;
+	float: left;
+	position: relative;
+	z-index: 5;
+	background:none;
+}
+
+.menu li:hover
+{
+	z-index: 10000;
+	white-space: normal;
+}
+
+.menu li li
+{
+	float: none;
+}
+
+.menu ul
+{
+	visibility: hidden;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	background:none;
+}
+
+.menu li:hover>ul
+{
+	visibility: visible;
+	top: 100%;
+}
+
+.menu li li:hover>ul
+{
+	top: 0;
+	left: 100%;
+}
+
+.menu:after, .menu ul:after
+{
+	content: ".";
+	height: 0;
+	display: block;
+	visibility: hidden;
+	overflow: hidden;
+	clear: both;
+}
+.menu, .menu ul
+{
+	min-height: 0;
+}
+
+.menu ul
+{
+	background-image: url(images/spacer.gif);
+	padding: 10px 30px 30px 30px;
+	margin: -10px 0 0 -30px;
+}
+
+.menu ul ul
+{
+	padding: 30px 30px 30px 10px;
+	margin: -30px 0 0 -10px;
+}
+
+
+
+
+
+div.nav-center
+{
+	position:relative;
+	float:right; 
+	right:50%;
+	
+}
+
+ul.menu
+{
+	position:relative;
+	float:left; 
+	left:50%;
+}
+
+.firefox2 ul.menu
+{
+	float:none;
+}
+
+
+/* menu structure */
+
+.menu
+{
+	padding: 8px 4px 0px 4px;
+}
+
+.nav
+{
+	position: relative;
+	height: 35px;
+	z-index: 100;
+}
+
+.nav .l, .nav .r
+{
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	height: 35px;
+	background-image: url('images/nav.png');
+}
+
+.nav .l
+{
+	left: 0;
+	right:0px;
+}
+
+.nav .r
+{
+	right: 0;
+	width: 884px;
+	clip: rect(auto, auto, auto, 884px);
+}
+
+
+/* end Menu */
+
+/* begin MenuItem */
+.menu ul li
+{
+	clear: both;
+}
+
+.menu a
+{
+	position:relative;
+	display: block;
+	overflow:hidden;
+	height: 27px;
+	cursor: pointer;
+	text-decoration: none;
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
+
+.menu a .r, .menu a .l
+{
+	position:absolute;
+	display: block;
+	top:0;
+	z-index:-1;
+	height: 81px;
+	background-image: url('images/MenuItem.png');
+}
+
+.menu a .l
+{
+	left:0;
+	right:4px;
+}
+
+.menu a .r
+{
+	width:408px;
+	right:0;
+	clip: rect(auto, auto, auto, 404px);
+}
+
+.menu a .t 
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 11px;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+text-transform: uppercase;
+	color: #D4D4D4;
+	padding: 0 14px;
+	margin: 0 4px;
+	line-height: 27px;
+	text-align: center;
+}
+
+.menu a:hover .l, .menu a:hover .r
+{
+	top:-27px;
+}
+
+.menu li:hover>a .l, .menu li:hover>a .r
+{
+	top:-27px;
+}
+
+.menu li:hover a .l, .menu li:hover a .r
+{
+	top:-27px;
+}
+.menu a:hover .t
+{
+	color: #FEE7E8;
+}
+
+.menu li:hover a .t
+{
+	color: #FEE7E8;
+}
+
+.menu li:hover>a .t
+{
+	color: #FEE7E8;
+}
+
+
+.menu a.active .l, .menu a.active .r
+{
+	top: -54px;
+}
+
+.menu a.active .t
+{
+	color: #F2F2F2;
+}
+
+
+/* end MenuItem */
+
+/* begin MenuSubItem */
+.menu ul a
+{
+	display:block;
+	text-align: center;
+	white-space: nowrap;
+	height: 32px;
+	width: 180px;
+	overflow:hidden;
+	line-height: 32px;
+	margin-right: auto;
+
+
+	background-image: url('images/subitem-bg.png');
+	background-position: left top;
+	background-repeat: repeat-x;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #696969;
+}
+
+.nav ul.menu ul span, .nav ul.menu ul span span
+{
+	display: inline;
+	float: none;
+	margin: inherit;
+	padding: inherit;
+	background-image: none;
+	text-align: inherit;
+	text-decoration: inherit;
+}
+
+.menu ul a, .menu ul a:link, .menu ul a:visited, .menu ul a:hover, .menu ul a:active, .nav ul.menu ul span, .nav ul.menu ul span span
+{
+	text-align: left;
+	text-indent: 12px;
+	text-decoration: none;
+	line-height: 32px;
+	color: #F0F0F0;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 11px;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+}
+
+.menu ul ul a
+{
+	margin-left: auto;
+}
+
+.menu ul li a:hover
+{
+	color: #000000;
+	border-color: #696969;
+	background-position: 0 -32px;
+}
+
+.menu ul li:hover>a
+{
+	color: #000000;
+	border-color: #696969;
+	background-position: 0 -32px;
+}
+
+.nav .menu ul li a:hover span, .nav .menu ul li a:hover span span
+{
+	color: #000000;
+}
+
+.nav .menu ul li:hover>a span, .nav .menu ul li:hover>a span span
+{
+	color: #000000;
+}
+
+
+/* end MenuSubItem */
+
+/* begin ContentLayout */
+.contentLayout
+{
+	position: relative;
+	margin-bottom: 1px;
+	width: 884px;
+}
+/* end ContentLayout */
+
+/* begin Box, Block */
+.Block
+{
+	position:relative;
+	z-index:0;
+	margin:0 auto;
+	min-width:1px;
+	min-height:1px;
+}
+
+.Block-body
+{
+	position: relative;
+	z-index: 1;
+	padding: 0px;
+}
+
+
+
+.Block
+{
+	margin: 5px;
+}
+
+/* end Box, Block */
+
+/* begin BlockHeader */
+.BlockHeader
+{
+	position:relative;
+	z-index:0;
+	height: 30px;
+	padding: 0 8px;
+	margin-bottom: 7px;
+}
+
+.BlockHeader .t
+{
+	height: 30px;
+	color: #000000;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 13px;
+font-variant: small-caps;
+	white-space : nowrap;
+	padding: 0 6px;
+	line-height: 30px;	
+}
+
+.BlockHeader .l, .BlockHeader .r
+{
+	display:block;
+	position:absolute;
+	z-index:-1;
+	height: 30px;
+	background-image: url('images/BlockHeader.png');
+}
+
+.BlockHeader .l
+{
+	left:0;
+	right:11px;
+}
+
+.BlockHeader .r
+{ 
+	width:898px;
+	right:0;
+	clip: rect(auto, auto, auto, 887px);
+}
+
+
+
+
+
+.header-tag-icon
+{
+    height: 30px;
+	background-position:left top;
+	background-image: url('images/BlockHeaderIcon.png');
+	padding:0 0 0 15px;
+	background-repeat: no-repeat;
+	min-height: 15px;
+	margin: 0 0 0 5px;
+}
+
+
+/* end BlockHeader */
+
+/* begin Box, BlockContent */
+.BlockContent
+{
+	position:relative;
+	z-index:0;
+	margin:0 auto;
+	min-width:23px;
+	min-height:23px;
+}
+
+.BlockContent-body
+{
+	position: relative;
+	z-index: 1;
+	padding: 8px;
+}
+
+.BlockContent-tr, .BlockContent-tl, .BlockContent-br, .BlockContent-bl, .BlockContent-tc, .BlockContent-bc,.BlockContent-cr, .BlockContent-cl
+{
+	position:absolute;
+	z-index:-1;
+}
+
+.BlockContent-tr, .BlockContent-tl, .BlockContent-br, .BlockContent-bl
+{
+	width: 22px;
+	height: 22px;
+	background-image: url('images/BlockContent-s.png');
+}
+
+.BlockContent-tl
+{
+	top:0;
+	left:0;
+	clip: rect(auto, 11px, 11px, auto);
+}
+
+.BlockContent-tr
+{
+	top: 0;
+	right: 0;
+	clip: rect(auto, auto, 11px, 11px);
+}
+
+.BlockContent-bl
+{
+	bottom: 0;
+	left: 0;
+	clip: rect(11px, 11px, auto, auto);
+}
+
+.BlockContent-br
+{
+	bottom: 0;
+	right: 0;
+	clip: rect(11px, auto, auto, 11px);
+}
+
+.BlockContent-tc, .BlockContent-bc
+{
+	left: 11px;
+	right: 11px;
+	height: 22px;
+	background-image: url('images/BlockContent-h.png');
+}
+
+.BlockContent-tc
+{
+	top: 0;
+	clip: rect(auto, auto, 11px, auto);
+}
+
+.BlockContent-bc
+{
+	bottom: 0;
+	clip: rect(11px, auto, auto, auto);
+}
+
+.BlockContent-cr, .BlockContent-cl
+{
+	top: 11px;
+	bottom: 11px;
+	width: 22px;
+	background-image: url('images/BlockContent-v.png');
+}
+
+.BlockContent-cr
+{
+	right:0;
+	clip: rect(auto, auto, auto, 11px);
+}
+
+.BlockContent-cl
+{
+	left:0;
+	clip: rect(auto, 11px, auto, auto);
+}
+
+.BlockContent-cc
+{
+	position:absolute;
+	z-index:-1;
+	top: 11px;
+	left: 11px;
+	right: 11px;
+	bottom: 11px;
+	background-image: url('images/BlockContent-c.png');
+}
+
+
+.BlockContent-body
+{
+	color:#242424;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 12px;
+}
+
+.BlockContent-body a:link
+{
+	color: #96080F;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: none;
+}
+
+.BlockContent-body a:visited, .BlockContent-body a.visited
+{
+	color: #858585;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: none;
+}
+
+.BlockContent-body a:hover, .BlockContent-body a.hover
+{
+	color: #CB0B14;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: underline;
+}
+
+.BlockContent-body ul
+{
+	list-style-type: none;
+	color: #4A4A4A;
+	margin:0;
+	padding:0;
+}
+
+.BlockContent-body ul li
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 12px;
+line-height: 125%;
+  line-height: 1.25em;
+  padding: 0px 0 0px 17px;
+  background-image: url('images/BlockContentbullets.png');
+  background-repeat: no-repeat;
+}
+
+/* end Box, BlockContent */
+
+/* begin Box, Post */
+.Post
+{
+	position:relative;
+	z-index:0;
+	margin:0 auto;
+	min-width:1px;
+	min-height:1px;
+}
+
+.Post-body
+{
+	position: relative;
+	z-index: 1;
+	padding: 15px;
+}
+
+
+
+.Post
+{
+	margin: 5px;
+}
+
+/* Start images */
+a img
+{
+	border: 0;
+}
+
+.article img, img.article
+{
+	margin: 1em;
+}
+
+.metadata-icons img
+{
+	border: none;
+	vertical-align: middle;
+	margin: 2px;
+}
+/* Finish images */
+
+/* Start tables */
+
+.article table, table.article
+{
+	border-collapse: collapse;
+	margin: 1px;
+	width:auto;
+}
+
+.article table, table.article .article tr, .article th, .article td
+{
+	background-color:Transparent;
+}
+
+.article th, .article td
+{
+	padding: 2px;
+	border: solid 1px #595959;
+	vertical-align: top;
+	text-align:left;
+}
+
+.article th
+{
+	text-align: center;
+	vertical-align: middle;
+	padding: 7px;
+}
+
+/* Finish tables */
+
+pre
+{
+	overflow: auto;
+	padding: 0.1em;
+}
+
+/* end Box, Post */
+
+/* begin PostHeaderIcon */
+.PostHeader
+{
+	text-decoration:none;
+	margin: 0.2em 0;
+	padding: 0;
+	font-weight:normal;
+	font-style:normal;
+	letter-spacing:normal;
+	word-spacing:normal;
+	font-variant:normal;
+	text-decoration:none;
+	font-variant:normal;
+	text-transform:none;
+	text-align:left;
+	text-indent:0;
+	line-height:inherit;
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+font-size: 28px;
+text-align: center;
+	color: #96080F;
+}
+
+.PostHeader a, .PostHeader a:link, .PostHeader a:visited, .PostHeader a:hover
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+font-size: 28px;
+text-align: center;
+	margin:0;
+	color: #96080F;
+}
+
+/* end PostHeaderIcon */
+
+/* begin PostHeader */
+.PostHeader a:link
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+text-decoration: none;
+font-variant: small-caps;
+  color: #B30912;
+}
+
+.PostHeader a:visited, .PostHeader a.visited
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+text-decoration: none;
+font-variant: small-caps;
+  color: #474747;
+}
+
+.PostHeader a:hover, .PostHeader a.hovered
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+text-decoration: none;
+font-variant: small-caps;
+  color: #A00810;
+}
+/* end PostHeader */
+
+/* begin PostIcons */
+.PostHeaderIcons
+{
+	padding:1px;
+}
+
+.PostHeaderIcons, .PostHeaderIcons a, .PostHeaderIcons a:link, .PostHeaderIcons a:visited, .PostHeaderIcons a:hover
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 11px;
+font-style: normal;
+font-weight: normal;
+text-align: center;
+	color: #4F4F4F;
+}
+
+.PostHeaderIcons a, .PostHeaderIcons a:link, .PostHeaderIcons a:visited, .PostHeaderIcons a:hover
+{
+	margin:0;
+}
+
+.PostHeaderIcons a:link
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-style: italic;
+font-weight: normal;
+text-decoration: none;
+	color: #545454;
+}
+
+.PostHeaderIcons a:visited, .PostHeaderIcons a.visited
+{
+font-style: italic;
+font-weight: normal;
+text-decoration: none;
+	color: #545454;
+}
+
+.PostHeaderIcons a:hover, .PostHeaderIcons a.hover
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-style: italic;
+font-weight: normal;
+text-decoration: underline;
+	color: #A00810;
+}
+/* end PostIcons */
+
+/* begin PostContent */
+/* Content Text Font & Color (Default) */
+body
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 12px;
+font-style: normal;
+font-weight: normal;
+  color: #262626;
+}
+
+
+.PostContent p 
+{
+	margin: 0.5em 0;
+}
+
+.PostContent, .PostContent p
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-style: normal;
+font-weight: normal;
+text-align: justify;
+  color: #262626;
+}
+
+.PostContent
+{
+  margin:0;
+}
+
+
+/* Start Content link style */
+/*
+The right order of link pseudo-classes: Link-Visited-Hover-Focus-Active.
+http://www.w3schools.com/CSS/css_pseudo_classes.asp
+http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states/
+*/
+a
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: underline;
+  color: #D50B15;
+}
+
+/* Adds special style to an unvisited link. */
+a:link
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: underline;
+  color: #D50B15;
+}
+
+/* Adds special style to a visited link. */
+a:visited, a.visited
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: none;
+  color: #545454;
+}
+
+/* :hover - adds special style to an element when you mouse over it. */
+a:hover, a.hover
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: none;
+  color: #A00810;
+}
+
+/* Finish Content link style */
+
+/* Resert some headings default style & links default style for links in headings*/
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited
+{
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+
+
+/* Start Content headings Fonts & Colors  */
+h1, h1 a, h1 a:link, h1 a:visited, h1 a:hover
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+font-size: 30px;
+  color: #545454;
+}
+
+h2, h2 a, h2 a:link, h2 a:visited, h2 a:hover
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+font-size: 28px;
+  color: #707070;
+}
+
+h3, h3 a, h3 a:link, h3 a:visited, h3 a:hover
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+font-size: 18px;
+  color: #707070;
+}
+
+h4, h4 a, h4 a:link, h4 a:visited, h4 a:hover
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+font-size: 16px;
+  color: #262626;
+}
+
+h5, h5 a, h5 a:link, h5 a:visited, h5 a:hover
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+font-size: 14px;
+  color: #262626;
+}
+
+h6, h6 a, h6 a:link, h6 a:visited, h6 a:hover
+{
+font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+font-size: 12px;
+  color: #262626;
+}
+/* Finish Content headings Fonts & Colors  */
+/* end PostContent */
+
+/* begin PostBullets */
+/* Start Content list */
+ol, ul
+{
+	color: #3B3B3B;
+	margin:1em 0 1em 2em;
+	padding:0;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 12px;
+}
+
+li ol, li ul
+{
+	margin:0.5em 0 0.5em 2em;
+	padding:0;
+}
+
+li 
+{
+	margin:0.2em 0;
+	padding:0;
+}
+
+ul
+{
+	list-style-type: none;
+}
+
+ol
+{
+	list-style-position:inside;
+	
+}
+
+
+
+.Post li
+{
+	padding:0px 0 0px 14px;
+	line-height:1.2em;
+}
+
+.Post ol li, .Post ul ol li
+{
+	background: none;
+	padding-left:0;
+}
+
+.Post ul li, .Post ol ul li 
+{
+	background-image: url('images/PostBullets.png');
+	background-repeat:no-repeat;
+	padding-left:14px;
+}
+
+
+/* Finish Content list */
+/* end PostBullets */
+
+/* begin PostQuote */
+/* Start blockquote */
+blockquote,
+blockquote p,
+.PostContent blockquote p
+{
+	color:#1D0203;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+}
+
+blockquote,
+.PostContent blockquote
+{
+		border:solid 1px #F76E75; 
+		margin:10px 10px 10px 50px;
+	padding:5px 5px 5px 32px;
+	background-color:#FBB1B5;
+	background-image:url('images/PostQuote.png');
+	background-position:left top;
+	background-repeat:no-repeat;
+}
+
+
+/* Finish blockuote */
+/* end PostQuote */
+
+/* begin PostMetadata */
+.PostMetadataFooter
+{
+	padding:1px;
+	background-color: #949494;
+}
+/* end PostMetadata */
+
+/* begin PostIcons */
+.PostFooterIcons
+{
+	padding:1px;
+}
+
+.PostFooterIcons, .PostFooterIcons a, .PostFooterIcons a:link, .PostFooterIcons a:visited, .PostFooterIcons a:hover
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 11px;
+font-style: normal;
+font-weight: normal;
+text-align: center;
+	color: #242424;
+}
+
+.PostFooterIcons a, .PostFooterIcons a:link, .PostFooterIcons a:visited, .PostFooterIcons a:hover
+{
+	margin:0;
+}
+
+.PostFooterIcons a:link
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-style: italic;
+font-weight: normal;
+text-decoration: none;
+	color: #4D4D4D;
+}
+
+.PostFooterIcons a:visited, .PostFooterIcons a.visited
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-style: italic;
+font-weight: normal;
+text-decoration: none;
+	color: #4D4D4D;
+}
+
+.PostFooterIcons a:hover, .PostFooterIcons a.hover
+{
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-style: italic;
+font-weight: normal;
+text-decoration: underline;
+	color: #91080F;
+}
+/* end PostIcons */
+
+/* begin Button */
+.button-wrapper .button
+{
+	display:inline-block;
+	width: auto;
+	outline:none;
+	border:none;
+	background:none;
+	line-height:29px;
+	margin:0 !important;
+	padding:0 !important;
+	overflow: visible;
+	cursor: default;
+	text-decoration: none !important;
+	z-index:0;
+	vertical-align: middle;
+}
+
+.button img, .button-wrapper img
+{
+  margin: 0;
+}
+
+.button-wrapper
+{
+	display:inline-block;
+	vertical-align: middle;
+	position:relative;
+	height: 29px;
+	overflow:hidden;
+	white-space: nowrap;
+	width: auto;
+	z-index:0;
+}
+
+.firefox2 .button-wrapper
+{
+	display:block;
+	float:left;
+}
+
+.button-wrapper .button
+{
+	display:block;
+	height: 29px;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 11px;
+font-style: normal;
+font-weight: bold;
+	white-space: nowrap;
+	text-align: left;
+	padding: 0 14px !important;
+	line-height: 29px;
+	text-decoration: none !important;
+	color: #F5F5F5 !important;
+}
+
+input, select
+{
+  vertical-align: middle;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 11px;
+font-style: normal;
+font-weight: bold;
+}
+
+.button-wrapper.hover .button, .button:hover
+{
+	color: #F5F5F5 !important;
+	text-decoration: none !important;
+}
+
+.button-wrapper.active .button
+{
+	color: #EDEDED !important;
+}
+
+.button-wrapper .l, .button-wrapper .r
+{
+	display:block;
+	position:absolute;
+	z-index:-1;
+	height: 87px;
+	background-image: url('images/Button.png');
+}
+
+.button-wrapper .l
+{
+	left:0;
+	right:8px;
+}
+
+.button-wrapper .r
+{
+	width:409px;
+	right:0;
+	clip: rect(auto, auto, auto, 401px);
+}
+
+.button-wrapper.hover .l, .button-wrapper.hover .r
+{
+	top: -29px;
+}
+
+.button-wrapper.active .l, .button-wrapper.active .r
+{
+	top: -58px;
+}
+
+
+/* end Button */
+
+/* begin Footer */
+.Footer
+{
+	position:relative;
+	z-index:0;
+	overflow:hidden;
+	width: 884px;
+	margin: 5px auto 0px auto;
+}
+
+.Footer .Footer-inner
+{
+	height:1%;
+	position: relative;
+	z-index: 0;
+	padding: 10px;
+	text-align: center;
+}
+
+
+
+.rss-tag-icon
+{
+	position: relative;
+	display:block;
+	float:left;
+	background-image: url('images/rssIcon.png');
+	background-position: center right;
+	background-repeat: no-repeat;
+	margin: 0 5px 0 0;
+	height: 32px;
+	width: 25px;
+    cursor: default;
+}
+
+
+
+
+.Footer .Footer-text p
+{
+	margin: 0;
+}
+
+.Footer .Footer-text
+{
+	display:inline-block;
+	color:#262626;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+font-size: 11px;
+}
+
+.Footer .Footer-text a:link
+{
+	text-decoration: none;
+	color: #6B060B;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: none;
+}
+
+.Footer .Footer-text a:visited
+{
+	text-decoration: none;
+	color: #000000;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: none;
+}
+
+.Footer .Footer-text a:hover
+{
+	text-decoration: none;
+	color: #350305;
+font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+text-decoration: underline;
+}
+/* end Footer */
+
+/* begin PageFooter */
+.page-footer, .page-footer a, .page-footer a:link, .page-footer a:visited, .page-footer a:hover
+{
+	font-family:Arial;
+	font-size:10px;
+	letter-spacing:normal;
+	word-spacing:normal;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:underline;
+	color:#999999;
+}
+
+.page-footer
+{
+	margin:1em;
+	text-align:center;
+	text-decoration:none;
+	color:#999999;
+}
+/* end PageFooter */
+
+/* begin LayoutCell */
+.contentLayout .sidebar1
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+	overflow: hidden;
+	width: 220px;
+}
+/* end LayoutCell */
+
+/* begin LayoutCell */
+.contentLayout .content
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+	overflow: hidden;
+	width: 441px;
+}
+.contentLayout .content-sidebar1
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+	overflow: hidden;
+	width: 661px;
+}
+.contentLayout .content-sidebar2
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+	overflow: hidden;
+	width: 661px;
+}
+.contentLayout .content-wide
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+	overflow: hidden;
+	width: 881px;
+}
+/* end LayoutCell */
+
+/* begin LayoutCell */
+.contentLayout .sidebar2
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+	overflow: hidden;
+	width: 220px;
+}
+/* end LayoutCell */
+
+
+
+.commentlist, .commentlist li
+{
+	background: none;
+}
+
+.commentlist li li
+{
+	margin-left:30px;
+}
+
+.commentlist li .avatar
+{
+	float: right;
+	border: 1px solid #eee;
+	padding: 2px;
+	margin:1px;
+	background: #fff;
+}
+
+.commentlist li cite
+{
+	font-size:1.2em;
+}
+
+#commentform textarea
+{
+	width: 100%;
+}
+
+img.wp-smiley
+{
+	border:none;
+	margin:0;
+	padding:0;
+}
+
+.navigation
+{
+	display: block;
+	text-align: center;
+}
+
+/* Recommended by http://codex.wordpress.org/CSS */
+/* Begin */
+.aligncenter, div.aligncenter, .article .aligncenter img, .aligncenter img.article, .aligncenter img, img.aligncenter
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft
+{
+	float: left;
+}
+
+.alignright
+{
+	float: right;
+}
+
+.alignright img, img.alignright
+{
+	margin: 1em;
+	margin-right: 0;
+}
+
+.alignleft img, img.alignleft
+{
+	margin: 1em;
+	margin-left: 0;
+}
+
+.wp-caption
+{
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+}
+
+.wp-caption img
+{
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text
+{
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+/* End */
+
+
+.hidden
+{
+	display: none;
+}
+
+/* Calendar */
+#wp-calendar {
+	empty-cells: show;
+	margin: 10px auto 0;
+	width: 155px;
+}
+
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+}
+
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+}
+
+#wp-calendar a {
+	display: block;
+}
+
+#wp-calendar caption {
+	text-align: center;
+	width: 100%;
+}
+
+#wp-calendar td {
+	padding: 3px 0;
+	text-align: center;
+}
+
+.gallery {
+    letter-spacing: normal;
+}
+
+#todays-events{
+  position: relative;
+  z-index: 11;    
+}
+
+#upcoming-events{
+  position: relative;
+  z-index: 10;    
+}

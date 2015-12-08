@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hooks>
+	<hooktype type="vbcms">
+		<hook>vbcms_widgetdm_start</hook>
+		<hook>vbcms_widgetdm_presave</hook>
+		<hook>vbcms_widgetdm_postsave</hook>
+		<hook>vbcms_widgetdm_postdelete</hook>
+		<hook>vbcms_article_defaultcontent_start</hook>
+		<hook>vbcms_article_defaultcontent_end</hook>
+		<hook>vbcms_articleblog_presave</hook>
+		<hook>vbcms_articlepost_presave</hook>
+		<hook>vbcms_article_populate_start</hook>
+		<hook>vbcms_article_populate_end</hook>
+		<hook>vbcms_article_save_start</hook>
+		<hook>vbcms_article_save_end</hook>
+	</hooktype>
+</hooks>
+
+<!-- CVS: $RCSfile$ - $Revision: 29616 $ -->

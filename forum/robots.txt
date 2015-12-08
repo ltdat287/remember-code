@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /mrvantich
+Allow: /upload/file
+Allow: /images
+Allow: /
+Allow: /upload
+Allow: /blog
+

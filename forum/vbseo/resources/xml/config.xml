@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings>
+<setting>
+<name>VBSEO_AFFILIATE_ID</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_404_CUSTOM</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_MEMCACHE_HOSTS</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_PINGBACK_NOTIFY_BCC</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_LINKBACK_SHOWHITS_UG</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_TWEETBOARD_USER</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_GARS_PAGENUM</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_DOMAINS_WHITELIST</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_DOMAINS_BLACKLIST</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_IGNOREPAGES</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_CUSTOM_DOCROOT</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_CUSTOM_TOPREL</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_TRANSLIT_CALLBACK</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_DOMAIN</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_DOMAIN</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_EXTRA_ROBOTS</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_ENABLED</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_LINK</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_404_HANDLE</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_ARCHIVE_ORDER_DESC</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_CACHE_TYPE</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_MEMCACHE_PERS</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_MEMCACHE_TTL</name>
+<value>3600</value>
+</setting>
+<setting>
+<name>VBSEO_MEMCACHE_TIMEOUT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_MEMCACHE_RETRY</name>
+<value>15</value>
+</setting>
+<setting>
+<name>VBSEO_MEMCACHE_COMPRESS</name>
+<value>20000</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_FORUM</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_THREADS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_THREADS_ADDTITLE</name>
+<value>3</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_THREADS_ADDTITLE_POST</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_ANNOUNCEMENT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_MEMBERS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_AVATAR</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_MEMBER_LIST</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_TREE_ICON</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_POLLS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_ATTACHMENTS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_ATTACHMENTS_ALT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_ARCHIVE_URLS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REDIRECT_ARCHIVE</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_THREAD_301_REDIRECT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_PRINTTHREAD</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_SHOWPOST</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_MALBUMS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_CMS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_CALENDAR</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_FORUM_FEED</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_BLOGS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_BLOGS_ENT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_BLOGS_CAT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_BLOGS_ATT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_BLOGS_FEED</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_BLOGS_LIST</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_BLOGS_TAGS_ENTRY</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_BLOGS_CUSTOM</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_GROUPS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_TAGS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_EXT_ADDTITLE</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_EXT_PINGBACK</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_EXT_TRACKBACK</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_IN_PINGBACK</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_IN_TRACKBACK</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_POSTBIT_PINGBACK</name>
+<value>3</value>
+</setting>
+<setting>
+<name>VBSEO_PERMALINK_PROFILE</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_PERMALINK_ALBUM</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_PERMALINK_BLOG</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_PERMALINK_CMS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_PERMALINK_GROUPS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_PERMALINK_GROUPS_PIC</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_PINGBACK_NOTIFY</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_IN_REFBACK</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_LINKBACK_IGNOREDUPE</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_TWEETBOARD</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_MEMBER_MORECHARS</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_FORUMLINK_DIRECT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REDIRECT_PRIV_EXTERNAL</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_URL_PART_MAX</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_PREV_DIRECT</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_NEXT_DIRECT</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_FILTER_STOPWORDS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_KEEP_STOPWORDS_SHORT</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_FILTER_FOREIGNCHARS</name>
+<value>2</value>
+</setting>
+<setting>
+<name>VBSEO_USE_HOSTNAME_IN_URL</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_ABSOLUTE_PATH_IN_URL</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_NOFOLLOW_SHOWPOST</name>
+<value>2</value>
+</setting>
+<setting>
+<name>VBSEO_NOFOLLOW_PRINTTHREAD</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_NOFOLLOW_SORT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_NOFOLLOW_DYNA</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_NOFOLLOW_EXTERNAL</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_NOFOLLOW_MEMBER_POSTBIT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_NOFOLLOW_MEMBER_FORUMHOME</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_CANONIC_LINK_TAG</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_VIRTUAL_HTML</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_KEYWORDS_IN_URLS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_ACRONYMS_IN_CONTENT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_ACRONYM_GUESTS</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_ACRONYM_SET</name>
+<value>2</value>
+</setting>
+<setting>
+<name>VBSEO_ACRONYM_PAGELIMIT</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_HP_FORCEINDEXROOT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_META_KEYWORDS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_META_DESCRIPTION</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_META_DESCRIPTION_MAX_CHARS</name>
+<value>150</value>
+</setting>
+<setting>
+<name>VBSEO_META_DESCRIPTION_UNIQUE</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_CODE_CLEANUP</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_CODE_CLEANUP_PREVIEW</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_CODE_CLEANUP_MEMBER_DROPDOWN</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_CODE_CLEANUP_LASTPOST</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_FORUMJUMP_OFF</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_DIRECTLINKS_THREADS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_CATEGORY_ANCHOR_LINKS</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_ARCHIVE_LINKS_FOOTER</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_EMAILS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_SITEMAP_MOD</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_ADD_ANALYTICS_CODE</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_ADD_ANALYTICS_CODE_EXT</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_ADD_ANALYTICS_GOAL</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_GOOGLE_AD_SEC</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_ANALYTICS_SEGMENTATION</name>
+<value>2</value>
+</setting>
+<setting>
+<name>VBSEO_IMAGES_DIM</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_RELEV_REPLACE</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_COPYRIGHT</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_GET_FORUM_TITLES</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_GET_FORUM_PATH</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_GET_THREAD_TITLES</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_GET_MEMBER_TITLES</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_CHECK_WWWDOMAIN</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_NOVER_INFO</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_ENABLE_GARS</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_NET_TIMEOUT</name>
+<value>5</value>
+</setting>
+<setting>
+<name>VBSEO_MAX_TITLE_LENGTH</name>
+<value>250</value>
+</setting>
+<setting>
+<name>VBSEO_SNIPPET_LENGTH</name>
+<value>200</value>
+</setting>
+<setting>
+<name>VBSEO_NEW_LAST_POST_COOKIE</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_LASTMOD_HEADER</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_UTF8_SUPPORT</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_FORCEHOMEPAGE_ROOT</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_SEARCH_REDIRECT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_CLEANUP_REDIRECT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_NO_URLENCODING</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_STATUS_HEADER</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_RECODE_TITLES</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_BOOKMARK_THREAD</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_BOOKMARK_POST</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_BOOKMARK_BLOG</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_BOOKMARK_DIGG</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_BOOKMARK_DELICIOUS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_BOOKMARK_TECHNORATI</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_BOOKMARK_FURL</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_BOOKMARK_CUSTOM</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_TRACKBACK_IPCHECK</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_STRIPSID_GUESTS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_INVALIDID_404</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_LINKBACK_REQUIRE_REF</name>
+<value>1</value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_PREFIX</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_PREFIX_NAME</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_URL_TAGS_FILTER</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_ADD_ANALYTICS_VIRTUAL</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_VIRTUAL_HTML_GUESTS_ONLY</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_CP_LANGUAGE</name>
+<value>english</value>
+</setting>
+<setting>
+<name>VBSEO_CONFIG_INIT</name>
+<value>0</value>
+</setting>
+<setting>
+<name>VBSEO_ARCHIVE_ROOT</name>
+<value><![CDATA[/archive/index.php/]]></value>
+</setting>
+<setting>
+<name>VBSEO_SPACER</name>
+<value><![CDATA[-]]></value>
+</setting>
+<setting>
+<name>VBSEO_REWRITE_EXT_ADDTITLE_BLACKLIST</name>
+<value><![CDATA[site.com|site1.com|site2.com|sitea.com|siteb.com|xxx.com|mysite.com|domain.com|mydomain.com|abc.com|123.com|forum1.com|forum2.com|myforum.com|sitename.com]]></value>
+</setting>
+<setting>
+<name>VBSEO_PINGBACK_SERVICE</name>
+<value><![CDATA[http://rpc.pingomatic.com|http://rpc.technorati.com/rpc/ping|http://blogsearch.google.com/ping/RPC2]]></value>
+</setting>
+<setting>
+<name>VBSEO_PINGBACK_STOPWORDS</name>
+<value><![CDATA[cialis|valium|xenical|phentermine|xanax|alprazolam|tramadol|diazepam|levitra|ambien|soma|prozac|meridia|viagra|propecia|vicodin|fioricet|ultram|didrex|ringtones|nexium|adipex|free|allegra|carisoprodol|swinger|amateur|sex|asian|porn|hydrocodone|prescription|ativan|paxil|xoomer|gambling|poker|celebrex|codeine|lexapro]]></value>
+</setting>
+<setting>
+<name>VBSEO_REFBACK_BLACKLIST</name>
+<value><![CDATA[google..+/(u/|search|blogsearch|custom|pda|linux|ie|ig)|search.yahoo.|search.msn.|msncache.com|altavista.com|answers.com|ask.|search.lycos.|dogpile.|alltheinternet.com|tiscali.|baidu.|verden.abcsok.no|[/&?=.](search|arama|blogsearch|query|results|sok|srch|yandsearch|aolsearch|q)[^a-z-]|backlink_checker.php|extremetracking.com|www.kvasir.no/nettsok/searchResult|awstats.pl?|translate.google.com|suchen.(pl|php|aspx)?|mail.yahoo.com|mail.live.com|squirrelmail/src/]]></value>
+</setting>
+<setting>
+<name>VBSEO_FORUM_TITLE_BIT</name>
+<value><![CDATA[%forum_title%]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_LASTPOST</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%-last-post.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_NEWPOST</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%-new-post.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_GOTOPOST</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%-post%post_id%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_GOTOPOST_PAGENUM</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%-post%post_id%-%thread_page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_PREV</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%-prev-thread.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_NEXT</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%-next-thread.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_PRINT</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%-print.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_PRINT_PAGENUM</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%-%thread_page%-print.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_POST_SHOW</name>
+<value><![CDATA[%post_id%-post%post_count%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_PAGENUM</name>
+<value><![CDATA[%forum_title%/%thread_id%-%thread_title%-%thread_page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_POLL</name>
+<value><![CDATA[%forum_title%/poll-%poll_id%-%poll_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_FORUM</name>
+<value><![CDATA[%forum_title%/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_FORUM_PAGENUM</name>
+<value><![CDATA[%forum_title%/index%forum_page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_FORUM_ANNOUNCEMENT</name>
+<value><![CDATA[%forum_title%/announcement-%announcement_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_FORUM_ANNOUNCEMENT_ALL</name>
+<value><![CDATA[%forum_title%/announcements.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER</name>
+<value><![CDATA[members/%user_name%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_MSGPAGE</name>
+<value><![CDATA[members/%user_name%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_CONV</name>
+<value><![CDATA[members/%user_name%-with-%visitor_name%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_CONVPAGE</name>
+<value><![CDATA[members/%user_name%-with-%visitor_name%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_FRIENDSPAGE</name>
+<value><![CDATA[members/%user_name%-friends-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_ALBUMS</name>
+<value><![CDATA[members/%user_name%-albums.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_ALBUMS_PAGE</name>
+<value><![CDATA[members/%user_name%-albums-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_ALBUM</name>
+<value><![CDATA[members/%user_name%-albums-%album_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_ALBUM_HOME</name>
+<value><![CDATA[members/albums.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_ALBUM_HOME_PAGE</name>
+<value><![CDATA[members/albums-%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_ALBUM_PAGE</name>
+<value><![CDATA[members/%user_name%-albums-%album_title%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_PICTURE</name>
+<value><![CDATA[members/%user_name%-albums-%album_title%-picture%picture_id%-%picture_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_PICTURE_PAGE</name>
+<value><![CDATA[members/%user_name%-albums-%album_title%-picture%picture_id%-%picture_title%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBER_PICTURE_IMG</name>
+<value><![CDATA[members/%user_name%-albums-%album_title%-picture%picture_id%-%picture_title%.%original_ext%]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBERLIST</name>
+<value><![CDATA[members/list/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBERLIST_PAGENUM</name>
+<value><![CDATA[members/list/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_MEMBERLIST_LETTER</name>
+<value><![CDATA[members/list/%letter%%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_AVATAR</name>
+<value><![CDATA[%user_name%.gif]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_THREAD_TREE_ICON</name>
+<value><![CDATA[%forum_title%/%thread_title%.gif]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_FORUM_TREE_ICON</name>
+<value><![CDATA[%forum_title%.gif]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_ATTACHMENT</name>
+<value><![CDATA[%forum_title%/%attachment_id%-%thread_title%-%original_filename%]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_ATTACHMENT_ALT</name>
+<value><![CDATA[%thread_title%-%original_filename%]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_HOME</name>
+<value><![CDATA[content/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_CATEGORY</name>
+<value><![CDATA[content/category/%category_id%-%category_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_ENTRY</name>
+<value><![CDATA[content/%entry_id%-%entry_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_ENTRY_PAGE</name>
+<value><![CDATA[content/%entry_id%-%entry_title%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_SECTION</name>
+<value><![CDATA[content/section/%section_id%-%section_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_AUTHOR</name>
+<value><![CDATA[content/author/%user_name%-%user_id%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_AUTHOR_PAGE</name>
+<value><![CDATA[content/author/%user_name%-%user_id%-%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_SECTION_LIST</name>
+<value><![CDATA[content/section/%section_id%-%section_title%-list.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_SECTION_PAGE</name>
+<value><![CDATA[content/section/%section_id%-%section_title%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_CATEGORY_PAGE</name>
+<value><![CDATA[content/category/%category_id%-%category_title%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_CMS_ENTRY_COMPAGE</name>
+<value><![CDATA[content/%entry_id%-%entry_title%-comments%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_FORUM_GENERAL_FEED</name>
+<value><![CDATA[rss.xml]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_FORUM_TITLE_FEED</name>
+<value><![CDATA[rss-%forum_title%.xml]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_HOME</name>
+<value><![CDATA[blogs/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_ENTRY</name>
+<value><![CDATA[blogs/%user_name%/%blog_id%-%blog_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_ENTRY_PAGE</name>
+<value><![CDATA[blogs/%user_name%/%blog_id%-%blog_title%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_ENTRY_REDIR</name>
+<value><![CDATA[blogs/comments/comment%comment_id%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_USER</name>
+<value><![CDATA[blogs/%user_name%/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_USER_PAGE</name>
+<value><![CDATA[blogs/%user_name%/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_GLOB_CAT</name>
+<value><![CDATA[blogs/categories/%category_title%/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_GLOB_CAT_PAGE</name>
+<value><![CDATA[blogs/categories/%category_title%/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_CAT</name>
+<value><![CDATA[blogs/%user_name%/%category_title%/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_CAT_PAGE</name>
+<value><![CDATA[blogs/%user_name%/%category_title%/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_LIST</name>
+<value><![CDATA[blogs/recent-entries/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_LIST_PAGE</name>
+<value><![CDATA[blogs/recent-entries/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_BLIST</name>
+<value><![CDATA[blogs/all/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_BLIST_PAGE</name>
+<value><![CDATA[blogs/all/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_NEXT</name>
+<value><![CDATA[blogs/%user_name%/%blog_id%-%blog_title%-next.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_PREV</name>
+<value><![CDATA[blogs/%user_name%/%blog_id%-%blog_title%-prev.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_FEED</name>
+<value><![CDATA[blogs/feed.rss]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_FEEDUSER</name>
+<value><![CDATA[blogs/%user_name%/feed.rss]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_CUSTOM</name>
+<value><![CDATA[blogs/%user_name%/custom%page_id%-%page_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_TAGS_HOME</name>
+<value><![CDATA[blogs/tags/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_TAGS_ENTRY</name>
+<value><![CDATA[blogs/tags/%tag%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_TAGS_ENTRY_PAGE</name>
+<value><![CDATA[blogs/tags/%tag%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_MONTH</name>
+<value><![CDATA[blogs/%year%/%month%/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_DAY</name>
+<value><![CDATA[blogs/%year%/%month%/%day%/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_MONTH_PAGE</name>
+<value><![CDATA[blogs/%year%/%month%/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_DAY_PAGE</name>
+<value><![CDATA[blogs/%year%/%month%/%day%/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_UMONTH</name>
+<value><![CDATA[blogs/%user_name%/%year%/%month%/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_UDAY</name>
+<value><![CDATA[blogs/%user_name%/%year%/%month%/%day%/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_ATT</name>
+<value><![CDATA[blogs/%user_name%/attachments/%attachment_id%-%blog_title%-%original_filename%]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_BEST_ENT</name>
+<value><![CDATA[blogs/best-entries/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_BEST_ENT_PAGE</name>
+<value><![CDATA[blogs/best-entries/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_BEST_BLOGS</name>
+<value><![CDATA[blogs/best-blogs/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_BEST_BLOGS_PAGE</name>
+<value><![CDATA[blogs/best-blogs/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_LAST_ENT</name>
+<value><![CDATA[blogs/latest-entries/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_LAST_ENT_PAGE</name>
+<value><![CDATA[blogs/latest-entries/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_CLIST</name>
+<value><![CDATA[blogs/comments/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_BLOG_CLIST_PAGE</name>
+<value><![CDATA[blogs/comments/index%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_HOME</name>
+<value><![CDATA[groups/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_ALL</name>
+<value><![CDATA[groups/all.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_ALL_PAGE</name>
+<value><![CDATA[groups/all-%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS</name>
+<value><![CDATA[groups/%group_name%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_PAGE</name>
+<value><![CDATA[groups/%group_name%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_MEMBERS</name>
+<value><![CDATA[groups/%group_name%-members.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_MEMBERS_PAGE</name>
+<value><![CDATA[groups/%group_name%-members-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_PIC</name>
+<value><![CDATA[groups/%group_name%-pictures.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_PIC_PAGE</name>
+<value><![CDATA[groups/%group_name%-pictures-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_PICTURE</name>
+<value><![CDATA[groups/%group_name%-picture%picture_id%-%picture_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_PICTURE_PAGE</name>
+<value><![CDATA[groups/%group_name%-picture%picture_id%-%picture_title%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_PICTURE_IMG</name>
+<value><![CDATA[groups/%group_name%-picture%picture_id%-%picture_title%.%original_ext%]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_CATEGORY</name>
+<value><![CDATA[groups/category-%cat_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_CATEGORY_PAGE</name>
+<value><![CDATA[groups/category-%cat_title%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_CATEGORY_LIST</name>
+<value><![CDATA[groups/categories.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_CATEGORY_LIST_PAGE</name>
+<value><![CDATA[groups/categories-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_DISCUSSION</name>
+<value><![CDATA[groups/%group_name%-%discussion_id%-%discussion_title%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_DISCUSSION_PAGE</name>
+<value><![CDATA[groups/%group_name%-%discussion_id%-%discussion_title%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_GROUPS_DISCUSSION_LAST_POST</name>
+<value><![CDATA[groups/%group_name%-%discussion_id%-%discussion_title%-last-post.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_TAGS_HOME</name>
+<value><![CDATA[tags/]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_TAGS_ENTRY</name>
+<value><![CDATA[tags/%tag%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_URL_TAGS_ENTRYPAGE</name>
+<value><![CDATA[tags/%tag%-page%page%.html]]></value>
+</setting>
+<setting>
+<name>VBSEO_STOPWORDS</name>
+<value><![CDATA[a|an|and|are|as|at|be|by|for|from|in|is|it|of|on|or|that|the|this|to|was|which|with]]></value>
+</setting>
+<setting>
+<name>VBSEO_HOMEPAGE_ALIASES</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_META_DESCRIPTION_MEMBER</name>
+<value><![CDATA[[username] is a [usertitle] in the [bbtitle]. View [username]'s profile.]]></value>
+</setting>
+<setting>
+<name>VBSEO_ANALYTICS_CODE</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_ANALYTICS_EXT_FORMAT</name>
+<value><![CDATA[/outgoing/]]></value>
+</setting>
+<setting>
+<name>VBSEO_ANALYTICS_GOAL_PATH</name>
+<value><![CDATA[/google-funnel/]]></value>
+</setting>
+<setting>
+<name>VBSEO_DEFAULT_MEMBERLIST_SORT</name>
+<value>username</value>
+</setting>
+<setting>
+<name>VBSEO_DEFAULT_MEMBERLIST_ORDER</name>
+<value>asc</value>
+</setting>
+<setting>
+<name>VBSEO_DEFAULT_FORUMDISPLAY_SORT</name>
+<value>lastpost</value>
+</setting>
+<setting>
+<name>VBSEO_DEFAULT_FORUMDISPLAY_ORDER</name>
+<value>desc</value>
+</setting>
+<setting>
+<name>VBSEO_DEFAULT_LINKBACKS_ORDER</name>
+<value>desc</value>
+</setting>
+<setting>
+<name>VBSEO_AVATAR_PREFIX</name>
+<value><![CDATA[avatars/]]></value>
+</setting>
+<setting>
+<name>VBSEO_ATTACHMENTS_PREFIX</name>
+<value><![CDATA[attachments/]]></value>
+</setting>
+<setting>
+<name>VBSEO_ICON_PREFIX</name>
+<value><![CDATA[iconimages/]]></value>
+</setting>
+<setting>
+<name>VBSEO_BLOG_CAT_UNDEF</name>
+<value>uncategorized</value>
+</setting>
+<setting>
+<name>VBSEO_VB_EXT</name>
+<value>php</value>
+</setting>
+<setting>
+<name>VBSEO_VB_CONFIG</name>
+<value><![CDATA[config.php]]></value>
+</setting>
+<setting>
+<name>VBSEO_USER_AGENT</name>
+<value><![CDATA[Mozilla/4.0 (vBSEO; http://www.vbseo.com)]]></value>
+</setting>
+<setting>
+<name>VBSEO_CACHE_VAR</name>
+<value>vbseo_storage</value>
+</setting>
+<setting>
+<name>VBSEO_AUTOLINK_FORMAT</name>
+<value><![CDATA[<a href="%1" title="%2">%2</a>]]></value>
+</setting>
+<setting>
+<name>VBSEO_BOOKMARK_SERVICES</name>
+<value><![CDATA[// Un-comment the patterns below (remove '//' at the beginning) to enable desired Bookmarking Services or add your own!|//http://www.facebook.com/share.php?u=%url%,images/vbseo/facebook.gif,Share on Facebook|//http://www.spurl.net/spurl.php?title=%title%&url=%url%,images/vbseo/spurl.gif,Spurl this Thread!,Spurl this Post!|//http://reddit.com/submit?url=%url%&title=%title%,images/vbseo/reddit.gif,Reddit!,Reddit! |//http://www.mister-wong.de/index.php?action=addurl&bm_url=%url%&bm_description=%title%,images/vbseo/mister-wong.gif,Wong this Thread!,Wong this Post!]]></value>
+</setting>
+<setting>
+<name>images_dim</name>
+<value><![CDATA[a:0:{}]]></value>
+</setting>
+<setting>
+<name>forum_slugs</name>
+<value><![CDATA[a:0:{}]]></value>
+</setting>
+<setting>
+<name>relev_repl</name>
+<value><![CDATA[a:3:{i:0;s:0:"";i:1;s:0:"";i:2;s:0:"";}]]></value>
+</setting>
+<setting>
+<name>relev_repl_t</name>
+<value><![CDATA[a:3:{i:0;s:0:"";i:1;s:0:"";i:2;s:0:"";}]]></value>
+</setting>
+<setting>
+<name>char_repl</name>
+<value><![CDATA['ơ' => 'o'
+'Ơ' => 'o'
+'ó' => 'o'
+'Ó' => 'o'
+'ò' => 'o'
+'Ò' => 'o'
+'ọ' => 'o'
+'Ọ' => 'o'
+'ỏ' => 'o'
+'Ỏ' => 'o'
+'õ' => 'o'
+'Õ' => 'o'
+'ớ' => 'o'
+'Ớ' => 'o'
+'ờ' => 'o'
+'Ờ' => 'o'
+'ợ' => 'o'
+'Ợ' => 'o'
+'ở' => 'o'
+'Ở' => 'o'
+'ỡ' => 'o'
+'Ỡ' => 'o'
+'ô' => 'o'
+'Ô' => 'o'
+'ố' => 'o'
+'Ố' => 'o'
+'ồ' => 'o'
+'Ồ' => 'o'
+'ộ' => 'o'
+'Ộ' => 'o'
+'ổ' => 'o'
+'Ổ' => 'o'
+'ỗ' => 'o'
+'Ỗ' => 'o'
+'ú' => 'u'
+'Ú' => 'u'
+'ù' => 'u'
+'Ù' => 'u'
+'ụ' => 'u'
+'Ụ' => 'u'
+'ủ' => 'u'
+'Ủ' => 'u'
+'ũ' => 'u'
+'Ũ' => 'u'
+'ư' => 'u'
+'Ư' => 'u'
+'ứ' => 'u'
+'Ứ' => 'u'
+'ừ' => 'u'
+'Ừ' => 'u'
+'ự' => 'u'
+'Ự' => 'u'
+'ử' => 'u'
+'Ử' => 'u'
+'ữ' => 'u'
+'Ữ' => 'u'
+'â' => 'a'
+'Â' => 'a'
+'á' => 'a'
+'Á' => 'a'
+'à' => 'a'
+'À' => 'a'
+'ạ' => 'a'
+'Ạ' => 'a'
+'ả' => 'a'
+'Ả' => 'a'
+'ã' => 'a'
+'Ã' => 'a'
+'ấ' => 'a'
+'Ấ' => 'a'
+'ầ' => 'a'
+'Ầ' => 'a'
+'ậ' => 'a'
+'Ậ' => 'a'
+'ẩ' => 'â'
+'Ẩ' => 'a'
+'ẫ' => 'a'
+'Ẫ' => 'a'
+'ă' => 'a'
+'Ă' => 'a'
+'ắ' => 'a'
+'Ắ' => 'a'
+'ằ' => 'a'
+'Ằ' => 'a'
+'ặ' => 'a'
+'Ặ' => 'a'
+'ẳ' => 'a'
+'Ẳ' => 'a'
+'ẵ' => 'a'
+'Ẵ' => 'a'
+'ế' => 'e'
+'Ế' => 'e'
+'ề' => 'e'
+'Ề' => 'e'
+'ệ' => 'e'
+'Ệ' => 'e'
+'ể' => 'e'
+'Ể' => 'e'
+'ễ' => 'e'
+'Ễ' => 'e'
+'é' => 'e'
+'É' => 'e'
+'è' => 'e'
+'È' => 'e'
+'ẹ' => 'e'
+'Ẹ' => 'e'
+'ẻ' => 'e'
+'Ẻ' => 'e'
+'ẽ' => 'e'
+'Ẽ' => 'e'
+'ê' => 'e'
+'Ê' => 'e'
+'í' => 'i'
+'Í' => 'i'
+'ì' => 'i'
+'Ì' => 'i'
+'ỉ' => 'i'
+'Ỉ' => 'i'
+'ĩ' => 'i'
+'Ĩ' => 'i'
+'ị' => 'i'
+'Ị' => 'i'
+'ý' => 'y'
+'Ý' => 'y'
+'ỳ' => 'y'
+'Ỳ' => 'y'
+'ỷ' => 'y'
+'Ỷ' => 'y'
+'ỹ' => 'y'
+'Ỹ' => 'y'
+'ỵ' => 'y'
+'Ỵ' => 'y'
+'đ' => 'd'
+'Đ' => 'd'
+]]></value>
+</setting>
+<setting>
+<name>acronyms</name>
+<value><![CDATA['seo' => 'Search Engine Optimization'
+'pr' => 'Google Page Ranking'
+'vb' => 'vBulletin'
+'vbseo' => 'vBulletin SEO'
+'afaik' => 'As far as I know'
+'tbd' => 'To be discussed'
+'js' => 'JavaScript']]></value>
+</setting>
+<setting>
+<name>custom_rules</name>
+<value><![CDATA[a:0:{}]]></value>
+</setting>
+<setting>
+<name>custom_rules_text</name>
+<value><![CDATA[//==========================================================================
+// Sample Custom Rewrite Rule: showgroup.php as forumleaders.html (Remove the '//' in front of the rule to enable).
+//==========================================================================
+//'^showgroups\.php$' =&gt; 'forumleaders.html'
+
+//==========================================================================
+// Sample Custom Rewrite Rules: calendar as static pages (Remove the '//' in front of the rules to enable).
+// Note: Enable the calendar dropdown redirect rule within the Custom 301 Redirects section below.
+//==========================================================================
+//'calendar\.php$' =&gt; 'calendar/'
+//'^calendar\.php\?c=1$' =&gt; 'calendar/'
+//'^calendar\.php\?(c=1&amp;)?do=(display.+?)(&amp;year=)?$' =&gt; 'calendar/$2/[NF]'
+//'calendar\.php\?(c=1&amp;)?nojs=1' =&gt; 'calendar/nojs/[NF]'
+//'calendar\.php\?(c=1&amp;)?do=(display.+?)&amp;nojs=1' =&gt; 'calendar/$2/nojs/[NF]'
+//'calendar\.php\?(c=1&amp;)?week=(\d+)&amp;nojs=1' =&gt; 'calendar/week-$2/nojs/[NF]'
+//'calendar\.php\?(c=1&amp;)?month=(\d+)&amp;year=(\d+)&amp;nojs=1' =&gt; 'calendar/$3/$2/nojs/[NF]'
+//'^calendar\.php\?do=getinfo&amp;(c=1&amp;)?day=(\d+)-(\d+)-(\d+)(&amp;c=1)?$' =&gt; 'calendar/$2/$3/$4/'
+//'^calendar\.php\?do=getinfo&amp;e=(\d+)(&amp;day=[0-9\-]+)?(&amp;c=1)?$' =&gt; 'calendar/event-$1/'
+//'^calendar\.php\?(s=&amp;)?(c=1&amp;)?(week=&amp;)?month=(\d+)&amp;year=(\d+)(&amp;c=1)?(&amp;do=displaymonth)?$' =&gt; 'calendar/$5/$4/'
+//'^calendar\.php\?c=1&amp;week=(\d+)(&amp;do=displayweek&amp;month=.+?)?$' =&gt; 'calendar/week-$1/']]></value>
+</setting>
+<setting>
+<name>custom_301</name>
+<value><![CDATA[a:0:{}]]></value>
+</setting>
+<setting>
+<name>custom_301_text</name>
+<value><![CDATA[//==========================================================================
+// Sample Custom 301 Redirect: calendar dropdown redirect (Remove the '//' in front of the rule to enable).
+// Note: Enable this redirect when using the sample CRRs provided for calendar rewriting above.
+//==========================================================================
+//'calendar/\?(.+)' =&gt; 'calendar.php?$1']]></value>
+</setting>
+<setting>
+<name>linkback_blacklist</name>
+<value><![CDATA[a:0:{}]]></value>
+</setting>
+<setting>
+<name>VBSEO_ADMIN_PASSWORD</name>
+<value>6d11eadf20887dcf6fccbabb3c8b769a</value>
+</setting>
+<setting>
+<name>VBSEO_KEEP_STOPWORDS</name>
+<value>1</value>
+</setting>
+<setting>
+<name>acro</name>
+<value><![CDATA[a:7:{s:3:"seo";s:26:"Search Engine Optimization";s:2:"pr";s:19:"Google Page Ranking";s:2:"vb";s:9:"vBulletin";s:5:"vbseo";s:13:"vBulletin SEO";s:5:"afaik";s:16:"As far as I know";s:3:"tbd";s:15:"To be discussed";s:2:"js";s:10:"JavaScript";}]]></value>
+</setting>
+<setting>
+<name>VBSEO_LINKBACK_BLACKLIST</name>
+<value></value>
+</setting>
+<setting>
+<name>VBSEO_SHOW_COPYRIGHT</name>
+<value>1</value>
+</setting>
+<setting>
+<name>crepl</name>
+<value><![CDATA[a:134:{s:2:"ơ";s:1:"o";s:2:"Ơ";s:1:"o";s:2:"ó";s:1:"o";s:2:"Ó";s:1:"o";s:2:"ò";s:1:"o";s:2:"Ò";s:1:"o";s:3:"ọ";s:1:"o";s:3:"Ọ";s:1:"o";s:3:"ỏ";s:1:"o";s:3:"Ỏ";s:1:"o";s:2:"õ";s:1:"o";s:2:"Õ";s:1:"o";s:3:"ớ";s:1:"o";s:3:"Ớ";s:1:"o";s:3:"ờ";s:1:"o";s:3:"Ờ";s:1:"o";s:3:"ợ";s:1:"o";s:3:"Ợ";s:1:"o";s:3:"ở";s:1:"o";s:3:"Ở";s:1:"o";s:3:"ỡ";s:1:"o";s:3:"Ỡ";s:1:"o";s:2:"ô";s:1:"o";s:2:"Ô";s:1:"o";s:3:"ố";s:1:"o";s:3:"Ố";s:1:"o";s:3:"ồ";s:1:"o";s:3:"Ồ";s:1:"o";s:3:"ộ";s:1:"o";s:3:"Ộ";s:1:"o";s:3:"ổ";s:1:"o";s:3:"Ổ";s:1:"o";s:3:"ỗ";s:1:"o";s:3:"Ỗ";s:1:"o";s:2:"ú";s:1:"u";s:2:"Ú";s:1:"u";s:2:"ù";s:1:"u";s:2:"Ù";s:1:"u";s:3:"ụ";s:1:"u";s:3:"Ụ";s:1:"u";s:3:"ủ";s:1:"u";s:3:"Ủ";s:1:"u";s:2:"ũ";s:1:"u";s:2:"Ũ";s:1:"u";s:2:"ư";s:1:"u";s:2:"Ư";s:1:"u";s:3:"ứ";s:1:"u";s:3:"Ứ";s:1:"u";s:3:"ừ";s:1:"u";s:3:"Ừ";s:1:"u";s:3:"ự";s:1:"u";s:3:"Ự";s:1:"u";s:3:"ử";s:1:"u";s:3:"Ử";s:1:"u";s:3:"ữ";s:1:"u";s:3:"Ữ";s:1:"u";s:2:"â";s:1:"a";s:2:"Â";s:1:"a";s:2:"á";s:1:"a";s:2:"Á";s:1:"a";s:2:"à";s:1:"a";s:2:"À";s:1:"a";s:3:"ạ";s:1:"a";s:3:"Ạ";s:1:"a";s:3:"ả";s:1:"a";s:3:"Ả";s:1:"a";s:2:"ã";s:1:"a";s:2:"Ã";s:1:"a";s:3:"ấ";s:1:"a";s:3:"Ấ";s:1:"a";s:3:"ầ";s:1:"a";s:3:"Ầ";s:1:"a";s:3:"ậ";s:1:"a";s:3:"Ậ";s:1:"a";s:3:"ẩ";s:2:"â";s:3:"Ẩ";s:1:"a";s:3:"ẫ";s:1:"a";s:3:"Ẫ";s:1:"a";s:2:"ă";s:1:"a";s:2:"Ă";s:1:"a";s:3:"ắ";s:1:"a";s:3:"Ắ";s:1:"a";s:3:"ằ";s:1:"a";s:3:"Ằ";s:1:"a";s:3:"ặ";s:1:"a";s:3:"Ặ";s:1:"a";s:3:"ẳ";s:1:"a";s:3:"Ẳ";s:1:"a";s:3:"ẵ";s:1:"a";s:3:"Ẵ";s:1:"a";s:3:"ế";s:1:"e";s:3:"Ế";s:1:"e";s:3:"ề";s:1:"e";s:3:"Ề";s:1:"e";s:3:"ệ";s:1:"e";s:3:"Ệ";s:1:"e";s:3:"ể";s:1:"e";s:3:"Ể";s:1:"e";s:3:"ễ";s:1:"e";s:3:"Ễ";s:1:"e";s:2:"é";s:1:"e";s:2:"É";s:1:"e";s:2:"è";s:1:"e";s:2:"È";s:1:"e";s:3:"ẹ";s:1:"e";s:3:"Ẹ";s:1:"e";s:3:"ẻ";s:1:"e";s:3:"Ẻ";s:1:"e";s:3:"ẽ";s:1:"e";s:3:"Ẽ";s:1:"e";s:2:"ê";s:1:"e";s:2:"Ê";s:1:"e";s:2:"í";s:1:"i";s:2:"Í";s:1:"i";s:2:"ì";s:1:"i";s:2:"Ì";s:1:"i";s:3:"ỉ";s:1:"i";s:3:"Ỉ";s:1:"i";s:2:"ĩ";s:1:"i";s:2:"Ĩ";s:1:"i";s:3:"ị";s:1:"i";s:3:"Ị";s:1:"i";s:2:"ý";s:1:"y";s:2:"Ý";s:1:"y";s:3:"ỳ";s:1:"y";s:3:"Ỳ";s:1:"y";s:3:"ỷ";s:1:"y";s:3:"Ỷ";s:1:"y";s:3:"ỹ";s:1:"y";s:3:"Ỹ";s:1:"y";s:3:"ỵ";s:1:"y";s:3:"Ỵ";s:1:"y";s:2:"đ";s:1:"d";s:2:"Đ";s:1:"d";}]]></value>
+</setting>
+</settings>
